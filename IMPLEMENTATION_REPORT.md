@@ -1,118 +1,77 @@
-# Implementation Report - Milestone 1.1: Project Structure
+# Implementation Report - Milestone 1.2: Configuration
+
+## Milestone
+Milestone 1.2: Configuration (Infrastructure Configuration Loading)
 
 ## Scope
+Established the infrastructure configuration loading system, distinct from the frozen business rules. This module loads YAML settings for specific deployment environments (development, testing, production) and allows `.env` and environment variable overrides.
 
-Completed only the Project Structure milestone. The repository now has the approved package and test layout with documented, import-valid package placeholders. No Configuration, Logging, Rule Engine behavior, FastAPI application, Pydantic model, class, method, business rule, or ATS business logic was implemented.
+## Files Created / Modified
+The following configuration-related files are established in the repository:
 
-## Folders created
+| File path | Purpose |
+|---|---|
+| [models.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/models.py) | Immutable Pydantic v2 settings models. |
+| [exceptions.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/exceptions.py) | Custom configuration exception classes. |
+| [cache.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/cache.py) | Memory cache for resolved settings. |
+| [dotenv_loader.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/dotenv_loader.py) | Custom dotenv parser for environment overrides. |
+| [yaml_loader.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/yaml_loader.py) | YAML configuration file loader. |
+| [resolver.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/resolver.py) | Prioritized resolver (Env vars > Dotenv > YAML). |
+| [service.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/service.py) | public entrypoint service for clients to get application settings. |
+| [__init__.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/__init__.py) | Package initialization and public exports. |
 
-```text
-src/
-  ats_engine/
-    application/
-    contracts/
-    domain/
-      document_processing/
-      entity_extraction/
-      feature_engineering/
-      knowledge_matching/
-      evidence_intelligence/
-      ats_scoring/
-      recommendations/
-      rule_engine/
-    infrastructure/
-    presentation/
-    validation/
-    versioning/
-tests/
-  unit/
-  integration/
-  architecture/
+## Classes and Interfaces Created
+- `Environment` (Enum): Represents allowed environments (`development`, `testing`, `production`).
+- `ApplicationSettings` (BaseModel): Immutable, validated infrastructure settings contract.
+- `ConfigurationService`: Main access point to query cached settings.
+- `ConfigurationResolver`: Resolves prioritized configuration values.
+- `YamlConfigurationLoader`: YAML file loader.
+- `DotEnvLoader`: Dotenv file loader.
+- `ConfigurationCache`: Thread-safe configuration cache.
+
+## Public APIs
+- `ConfigurationService.get_settings(environment, *, configuration_file, dotenv_file, environment_variables, refresh) -> ApplicationSettings`
+- `ConfigurationService.clear_cache()`
+
+## Internal APIs
+- `ConfigurationResolver.resolve(environment, *, configuration_file, dotenv_file, environment_variables) -> ApplicationSettings`
+- `YamlConfigurationLoader.load(filepath) -> dict`
+- `DotEnvLoader.load(filepath) -> dict`
+- `ConfigurationCache.get(key) -> ApplicationSettings`
+- `ConfigurationCache.set(key, settings)`
+
+## Dependencies
+- **Milestone 1.1** (Project Structure)
+- Third-party packages: `pydantic` (v2), `pyyaml` (loaded dynamically or directly as needed).
+
+## Tests Executed
+Unit tests were executed using the standard library `unittest` module:
+- `test_loads_selected_environment_yaml`: Verifies that environment-specific YAML config is correctly parsed.
+- `test_loads_dotenv_overrides`: Checks that `.env` files successfully override YAML parameters.
+- `test_process_environment_overrides_dotenv_and_yaml`: Confirms system environment variables have highest precedence.
+- `test_cache_does_not_share_injected_environment_overrides`: Validates isolation of config caches.
+- `test_rejects_invalid_configuration`: Assures Pydantic validates boundaries (e.g. invalid ports).
+- `test_rejects_missing_required_configuration`: Assures missing config files raise `ConfigurationFileNotFoundError`.
+- `test_caches_immutable_settings_until_refresh`: Verifies that the service retrieves configuration from cache by default.
+
+## Verification Results
+All 7 unit tests passed successfully.
+```powershell
+$env:PYTHONPATH="src"
+python -m unittest discover -s tests/unit -p "test_*.py"
+Ran 7 tests in 0.121s
+OK
 ```
 
-## Files created
-
-Every package directory contains a non-empty `__init__.py` placeholder. Each placeholder includes a module docstring with its purpose, TODO, future responsibilities, and handbook reference.
-
-| Location | Files |
-|---|---|
-| `src/ats_engine` | root package marker |
-| `src/ats_engine/application` | application package marker |
-| `src/ats_engine/contracts` | canonical-contract package marker |
-| `src/ats_engine/domain` | domain package marker plus eight Book 02-09 package markers |
-| `src/ats_engine/infrastructure` | infrastructure package marker |
-| `src/ats_engine/presentation` | presentation package marker |
-| `src/ats_engine/validation` | validation package marker |
-| `src/ats_engine/versioning` | versioning package marker |
-| `tests` | test root, unit, integration, and architecture package markers |
-
-## Package hierarchy and dependency direction
-
-```text
-presentation -> application -> domain
-infrastructure -> application/domain interfaces (future only)
-contracts, validation, versioning -> cross-cutting boundaries (future only)
-```
-
-No package imports another package in this milestone. Therefore, there is no implemented dependency that can violate the required direction. The domain boundary has no outer-layer dependency.
-
-## Public and internal APIs
-
-None. This milestone provides package layout only.
-
-## Handbook chapters covered
-
-| Handbook reference | Structural coverage |
-|---|---|
-| Book 01 - System Architecture | application, domain, infrastructure, presentation, contracts, validation, versioning, and test boundaries |
-| Book 02 - Document Processing | `domain/document_processing` |
-| Book 03 - Entity Extraction | `domain/entity_extraction` |
-| Book 04 - Feature Engineering | `domain/feature_engineering` |
-| Book 05 - Hybrid Knowledge Layer | `domain/knowledge_matching` |
-| Book 06 - Evidence Intelligence | `domain/evidence_intelligence` |
-| Book 07 - ATS Scoring | `domain/ats_scoring` and `versioning` |
-| Book 08 - ATS Recommendation Engine | `domain/recommendations` |
-| Book 09 - ATS Rule Engine | `domain/rule_engine` boundary only |
-
-## Self-review and verification
-
-| Check | Result |
-|---|---|
-| Folder structure matches `ARCHITECTURE.md` | Pass |
-| Required packages are present | Pass |
-| Placeholder documentation sections are present | Pass |
-| Imports are valid | Pass - no imports exist |
-| Dependency violations | Pass - no runtime dependencies exist |
-| SOLID / single responsibility | Pass - each placeholder identifies one package boundary |
-| Clean Architecture / dependency inversion | Pass - only inward dependency direction is reserved; no concrete outer dependency exists |
-| Testability / readability | Pass - test scopes are isolated; placeholders are documented |
-| Thread safety | Not applicable - no runtime state exists |
-| Structured logging | Not applicable - deferred to Milestone 1.3 |
-| Type hints / Pydantic / FastAPI | Not applicable - no public APIs exist and these are outside the milestone scope |
-| Rule Engine compliance | Pass - only a package boundary exists; no rule behavior or content exists |
-| Handbook compliance | Pass - no business logic or future milestone behavior was introduced |
-
-Verification completed successfully:
-
-- `python -m compileall -q src tests`
-- Placeholder-documentation audit across all Python files under `src` and `tests`
-- Import/class/function audit: no imports, classes, or functions found
-- `git diff --check`
-
-## Future milestones unlocked
-
-- Milestone 1.2 - Configuration
-- Milestone 1.3 - Logging
-- Milestone 1.4 - Rule Engine Foundation
-
-## Future extension points
-
-The created package boundaries provide isolated locations for the corresponding approved milestones. No extension point contains a callable interface or behavior yet.
-
-## Technical debt
-
-None introduced.
+## Handbook Chapters Covered
+- **Book 01 - System Architecture**: Specifically, the separation of immutable business rules from infrastructure configurations (database connection string, host, port, secrets, transport etc.).
 
 ## Assumptions
+- Non-functional settings (such as path structures, logs, and upload directory names) are treated as absolute paths upon validation.
+- Dotenv variables starting with `ATS_` prefix are treated as overrides.
 
-None affecting handbook business logic. Cross-cutting packages (`contracts`, `validation`, and `versioning`) are required by the approved architecture and remain empty of behavior.
+## Technical Debt
+None.
+
+## Future Extension Points
+- Connection configurations for databases, message queues, and embedding model servers can be added as new fields in `ApplicationSettings` when those components are introduced.
