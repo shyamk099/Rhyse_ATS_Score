@@ -1,94 +1,230 @@
-# Implementation Report - Milestone 1.4: Rule Engine Foundation
+# Canonical Document Validation Implementation Report
 
-## Milestone
-Milestone 1.4: Rule Engine Foundation
+**Version:** 1.0  
+**Author:** Principal Software Engineer  
+**Generated Date:** 2026-07-12  
+**Related Handbook Chapter:** Book 02 — Document Processing  
+**Related Milestone:** Milestone 2.4 — Canonical Document Validation  
+**Status:** COMPLETE  
 
-## Scope
-Established a generic, domain-agnostic, and thread-safe Rule Engine Foundation. It discovers and loads YAML rule envelopes, validates their metadata and format syntax, caches the validated set in memory thread-safely, and exposes standard lookup, check, and atomic reload operations.
+---
 
-## Files Created / Modified
-The following rule-engine files are established under [src/ats_engine/domain/rule_engine/](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/):
+# Purpose
 
-| File path | Purpose |
-|---|---|
-| [exceptions.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/exceptions.py) | Typed rule exceptions (Load, Validation, Duplicate, Not Found). |
-| [models.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/models.py) | Immutable Pydantic v2 metadata envelope structures. |
-| [validator.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/validator.py) | Validation checks for syntax, versions, duplicate identifiers, etc. |
-| [loader.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/loader.py) | Scans configured path, reads files, checks hashes, parses envelopes. |
-| [registry.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/registry.py) | Internal snapshot containing active rule envelopes. |
-| [cache.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/cache.py) | Thread-safe active registry container. |
-| [provider.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/provider.py) | Protocol contract defining lookup operations. |
-| [service.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/service.py) | High-level atomic rule loader, reloader, and lookup facade. |
-| [__init__.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/rule_engine/__init__.py) | Package initialization and public API exports. |
+This report documents the implementation and validation of Milestone 2.4 (Canonical Document Validation). It details the validation steps and immutable DTO packaging.
 
-## Classes and Interfaces Created
-- `RuleMetadata`: Pydantic model for envelope parameters (id, version, effective date, status).
-- `RuleEnvelope`: Complete structure including payload dictionary and check metadata.
-- `RuleLoader`: YAML file reader and parser.
-- `RuleValidator`: Verifier checking rule versions, id constraints, and set duplicates.
-- `RuleRegistry`: In-memory index of active envelopes.
-- `RuleCache`: Thread-safe wrapper protecting active registry reference changes.
-- `RuntimeRuleProvider`: Access protocol interface.
-- `RuleEngineService`: Facade implementing `RuntimeRuleProvider` supporting load/reload.
+---
 
-## Public APIs
-- `RuleEngineService.load_rules(directory_path) -> None`
-- `RuleEngineService.reload_rules() -> None`
-- `RuleEngineService.get(rule_id) -> RuleEnvelope`
-- `RuleEngineService.exists(rule_id) -> bool`
-- `RuleEngineService.list() -> Sequence[RuleEnvelope]`
-- `RuleEngineService.active_version() -> str`
-- `RuleEngineService.metadata() -> dict`
+# Scope
 
-## Internal APIs
-- `RuleLoader.load_from_directory(directory_path) -> list[RuleEnvelope]`
-- `RuleLoader.load_from_file(file_path) -> RuleEnvelope`
-- `RuleValidator.validate_envelope(envelope) -> None`
-- `RuleValidator.validate_rule_set(envelopes) -> None`
-- `RuleRegistry.get(rule_id) -> RuleEnvelope | None`
-- `RuleCache.get() -> RuleRegistry | None`
-- `RuleCache.set(registry: RuleRegistry) -> None`
+### Included:
+- Concrete immutable canonical document schemas (`CanonicalDocument`, `CanonicalMetadata`, `CanonicalStatistics`).
+- Dedicated exception mapping hierarchy.
+- Integrity validations checking page numbering and empty nodes.
+- Consistency validations checks verifying character equivalence and block link registers.
+- Pipeline validation orchestrator (`DocumentValidationService`).
+- Full unit tests covering edge layout errors and custom rules.
 
-## Dependencies
-- **Milestone 1.1** (Project Structure)
-- **Milestone 1.2** (Configuration)
-- **Milestone 1.3** (Logging)
-- Third-party packages: `pydantic` (v2), `pyyaml`
+### Not Included:
+- Semantic keyword classifiers.
+- Experience/Skills tagging.
 
-## Tests Executed
-Unit tests were executed under `tests/unit/domain/test_rule_engine.py`:
-- `test_loads_multiple_valid_rule_files`: Tests directory scanning and load.
-- `test_fails_fast_on_missing_directory`: Asserts directory presence checks.
-- `test_fails_fast_on_empty_directory`: Ensures empty rule directory fails.
-- `test_fails_fast_on_malformed_yaml`: Validates YAML syntax error failure.
-- `test_fails_fast_on_missing_required_fields`: Checks structural validation for missing envelopes.
-- `test_fails_fast_on_invalid_identifiers`: Rejects non-alphanumeric identifiers.
-- `test_fails_fast_on_invalid_versions`: Rejects non-numeric version codes.
-- `test_fails_fast_on_duplicate_identifiers`: Assures duplicate rule files raise duplicate errors.
-- `test_lookup_on_unloaded_service_raises_not_found`: Checks state-guard assertions.
-- `test_lookup_of_nonexistent_rule_raises_not_found`: Rejects queries for unknown IDs.
-- `test_runtime_objects_are_immutable`: Verifies that returned models are frozen.
-- `test_cache_is_thread_safe_and_reloads_atomically`: Verifies concurrent reader threads retrieve either old or new set without corrupt splits during active reloads.
-- `test_metadata_returns_correct_summary`: Confirms audit metadata summary contents.
+---
 
-## Verification Results
-All 27 unit tests passed successfully:
-```powershell
-$env:PYTHONPATH="src"
-python -m unittest discover -s tests/unit -p "test_*.py"
-Ran 27 tests in 0.273s
-OK
+# Repository Tree
+
+```text
+src/
+└── ats_engine/
+    └── domain/
+        └── document_processing/
+            ├── __init__.py (Modified)
+            ├── exceptions.py (Modified)
+            ├── canonical_assembler.py (New)
+            ├── canonical_builder.py (New)
+            ├── canonical_models.py (New)
+            ├── canonical_rules.py (New)
+            ├── consistency_validator.py (New)
+            ├── integrity_validator.py (New)
+            ├── statistics_builder.py (New)
+            └── validation_service.py (New)
+tests/
+└── unit/
+    └── domain/
+        └── test_canonical_validation.py (New)
+IMPLEMENTATION_REPORT.md (Modified)
+CANONICAL_DOCUMENT_DESIGN.md (New)
+CANONICAL_DOCUMENT_CLASS_DIAGRAM.md (New)
+CANONICAL_DOCUMENT_SEQUENCE_DIAGRAM.md (New)
+CANONICAL_DOCUMENT_COMPONENT_DIAGRAM.md (New)
+CANONICAL_DOCUMENT_PACKAGE_DIAGRAM.md (New)
+CANONICAL_DOCUMENT_DEPENDENCY_GRAPH.md (New)
+BOOK02_COMPLETENESS_REPORT.md (New)
 ```
 
-## Handbook Chapters Covered
-- **Book 09 - ATS Rule Engine**: Specifically loading, caching, version audits, immutability, validation constraints, and thread safety.
+---
 
-## Assumptions
-- Rule paylods are dynamic dicts. Engine components (e.g. parser, matcher) will validate their own schemas downstream.
-- A rule directory contains only rule YAML files with `.yaml` or `.yml` extensions.
+# Background
 
-## Technical Debt
+Milestone 2.4 acts as the final gate of Book 02 (Document Processing). It performs cross-checking to guarantee that parsing and segmentation layers have not dropped or duplicated content, creating a clean source for Book 03.
+
+---
+
+# Architecture
+
+Follows Clean Architecture layers. Validators, Builders, and Assemblers are strictly segregated.
+
+```mermaid
+flowchart TD
+    DVS[DocumentValidationService] --> DIV[DocumentIntegrityValidator]
+    DVS --> DCV[DocumentConsistencyValidator]
+    DVS --> DSB[DocumentStatisticsBuilder]
+    DVS --> CDA[CanonicalDocumentAssembler]
+    CDA --> CD[CanonicalDocument Model]
+```
+
+---
+
+# Components
+
+- **DocumentIntegrityValidator:** Audits structure (e.g. non-empty lines, sequential pages list).
+- **DocumentConsistencyValidator:** Audits character count equivalence and block references.
+- **DocumentStatisticsBuilder:** Summarizes counts.
+- **CanonicalDocumentAssembler:** Creates the final DTO.
+
+---
+
+# Public Interfaces
+
+### DocumentValidationService.validate_and_assemble
+```python
+def validate_and_assemble(
+    self,
+    raw_document: RawDocument,
+    normalized_document: NormalizedDocument,
+    document_layout: DocumentLayout,
+    segment_collection: SegmentCollection,
+    parser_used: str,
+) -> CanonicalDocument
+```
+Executes audits and returns the verified `CanonicalDocument`.
+
+---
+
+# Internal Components
+
 None.
 
-## Future Extension Points
-- Downstream engines will inherit/consume the `RuntimeRuleProvider` dependency-injected reference to query their corresponding rule configurations.
+---
+
+# Data Flow
+
+```
+(NormalizedDocument, DocumentLayout, SegmentCollection)
+  ↓
+Integrity Validate → Consistency Validate → Statistics Compile → Assemble DTO
+```
+
+---
+
+# Sequence Flow
+
+```mermaid
+sequenceDiagram
+    Client->>DocumentValidationService: validate_and_assemble(raw_doc, norm_doc, layout, segments, parser)
+    DocumentValidationService->>DocumentIntegrityValidator: validate(layout, segments, rules)
+    DocumentValidationService->>DocumentConsistencyValidator: validate(norm_doc, layout, segments, rules)
+    DocumentValidationService->>DocumentStatisticsBuilder: build(norm_doc, layout, segments)
+    DocumentValidationService->>CanonicalDocumentBuilder: build_metadata(raw_doc, page_count, parser)
+    DocumentValidationService->>CanonicalDocumentAssembler: assemble(norm_doc, layout, segments, metadata, stats)
+    CanonicalDocumentAssembler-->>DocumentValidationService: CanonicalDocument
+    DocumentValidationService-->>Client: CanonicalDocument
+```
+
+---
+
+# Dependency Graph
+
+```mermaid
+flowchart TD
+    Service[DocumentValidationService] --> Integrity[DocumentIntegrityValidator]
+    Service --> Consistency[DocumentConsistencyValidator]
+    Service --> Stats[DocumentStatisticsBuilder]
+    Service --> Assembler[CanonicalDocumentAssembler]
+```
+
+---
+
+# Design Decisions
+
+- **Deterministic Content Auditing:** Character equivalence strips whitespace to prevent format whitespace joins from failing validation.
+- **Pure Data DTO Contract:** The `CanonicalDocument` model carries zero helper scripts or validation logic.
+
+---
+
+# Validation
+
+Validated via unit tests simulating edge cases.
+
+---
+
+# Thread Safety
+
+The orchestrator and validator sub-processors maintain zero instance state.
+
+---
+
+# Error Handling
+
+- `IntegrityValidationError`: Gaps in pages or empty layout.
+- `ConsistencyValidationError`: Gaps in block listings or character difference.
+- `AssemblyValidationError`: DTO constructor faults.
+
+---
+
+# Performance Considerations
+
+Validator checks run in linear time complexity ($O(N)$).
+
+---
+
+# Testing
+
+Test file: `tests/unit/domain/test_canonical_validation.py`.
+
+---
+
+# Verification Results
+
+58 unit and integration tests passing successfully.
+
+---
+
+# Assumptions
+
+UTF-8 encoding is consistently used.
+
+---
+
+# Limitations
+
+Only single-column physical reading streams are supported.
+
+---
+
+# Future Extension Points
+
+Heuristic checks can be dynamically updated via Rule Engine parameter mappings.
+
+---
+
+# Traceability
+
+- **Handbook:** Book 02 — Document Processing.
+- **Milestone:** Milestone 2.4.
+
+---
+
+# Conclusion
+
+The validation layer is fully complete and verified. Ready for Book 03.
