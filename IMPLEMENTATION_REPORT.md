@@ -1,77 +1,77 @@
-# Implementation Report - Milestone 1.2: Configuration
+# Implementation Report - Milestone 1.3: Logging Infrastructure
 
 ## Milestone
-Milestone 1.2: Configuration (Infrastructure Configuration Loading)
+Milestone 1.3: Logging Infrastructure
 
 ## Scope
-Established the infrastructure configuration loading system, distinct from the frozen business rules. This module loads YAML settings for specific deployment environments (development, testing, production) and allows `.env` and environment variable overrides.
+Established a domain-agnostic, thread-safe, and structured logging framework. It supports console, rotating file, JSON formatted, and context-aware logging with performance timing helpers. No domain-specific concepts or business rules were introduced.
 
 ## Files Created / Modified
-The following configuration-related files are established in the repository:
+The following logging-related files are established in the repository under [src/ats_engine/infrastructure/logging/](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/):
 
 | File path | Purpose |
 |---|---|
-| [models.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/models.py) | Immutable Pydantic v2 settings models. |
-| [exceptions.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/exceptions.py) | Custom configuration exception classes. |
-| [cache.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/cache.py) | Memory cache for resolved settings. |
-| [dotenv_loader.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/dotenv_loader.py) | Custom dotenv parser for environment overrides. |
-| [yaml_loader.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/yaml_loader.py) | YAML configuration file loader. |
-| [resolver.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/resolver.py) | Prioritized resolver (Env vars > Dotenv > YAML). |
-| [service.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/service.py) | public entrypoint service for clients to get application settings. |
-| [__init__.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/configuration/__init__.py) | Package initialization and public exports. |
+| [context.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/context.py) | Thread/async-safe context manager using contextvars. |
+| [exceptions.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/exceptions.py) | Generic logging configuration/load errors. |
+| [formatter.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/formatter.py) | StructuredFormatter transforming python LogRecords into valid JSON. |
+| [adapter.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/adapter.py) | LoggerAdapter wrapping standard loggers to inject runtime context. |
+| [factory.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/factory.py) | Thread-safe, cached LoggerFactory manager. |
+| [performance.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/performance.py) | Execution duration logs and context helpers. |
+| [service.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/service.py) | System-wide config, stream/file rotation handler setup, and shutdown. |
+| [__init__.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/infrastructure/logging/__init__.py) | Package initialization and public exports. |
 
 ## Classes and Interfaces Created
-- `Environment` (Enum): Represents allowed environments (`development`, `testing`, `production`).
-- `ApplicationSettings` (BaseModel): Immutable, validated infrastructure settings contract.
-- `ConfigurationService`: Main access point to query cached settings.
-- `ConfigurationResolver`: Resolves prioritized configuration values.
-- `YamlConfigurationLoader`: YAML file loader.
-- `DotEnvLoader`: Dotenv file loader.
-- `ConfigurationCache`: Thread-safe configuration cache.
+- `LoggingContext`: Handles thread-safe local variable metadata state.
+- `StructuredFormatter`: Formats logs as JSON, merging standard Python LogRecord parameters, custom `extra` keyword dict, and active `LoggingContext` fields.
+- `LoggingContextAdapter`: Logger adapter to dynamically append extra variables during output.
+- `LoggerFactory`: Central class providing cached logger instances.
+- `LoggingService`: Orchestrates setup/configuration dictConfig and shutdown procedures.
+- `log_execution_time`: Python context manager and decorator to measure latency.
 
 ## Public APIs
-- `ConfigurationService.get_settings(environment, *, configuration_file, dotenv_file, environment_variables, refresh) -> ApplicationSettings`
-- `ConfigurationService.clear_cache()`
-
-## Internal APIs
-- `ConfigurationResolver.resolve(environment, *, configuration_file, dotenv_file, environment_variables) -> ApplicationSettings`
-- `YamlConfigurationLoader.load(filepath) -> dict`
-- `DotEnvLoader.load(filepath) -> dict`
-- `ConfigurationCache.get(key) -> ApplicationSettings`
-- `ConfigurationCache.set(key, settings)`
+- `LoggingService.configure(*, log_directory, logging_configuration_path, default_level)`
+- `LoggingService.shutdown()`
+- `LoggerFactory.get_logger(name) -> LoggingContextAdapter`
+- `LoggingContext.context(**kwargs)`
+- `LoggingContext.set(key, value)`
+- `LoggingContext.get(key)`
+- `LoggingContext.get_all()`
+- `LoggingContext.clear()`
+- `log_execution_time(logger, operation_name, *, level)`
 
 ## Dependencies
 - **Milestone 1.1** (Project Structure)
-- Third-party packages: `pydantic` (v2), `pyyaml` (loaded dynamically or directly as needed).
+- **Milestone 1.2** (Configuration)
+- Third-party packages: `pyyaml`
 
 ## Tests Executed
-Unit tests were executed using the standard library `unittest` module:
-- `test_loads_selected_environment_yaml`: Verifies that environment-specific YAML config is correctly parsed.
-- `test_loads_dotenv_overrides`: Checks that `.env` files successfully override YAML parameters.
-- `test_process_environment_overrides_dotenv_and_yaml`: Confirms system environment variables have highest precedence.
-- `test_cache_does_not_share_injected_environment_overrides`: Validates isolation of config caches.
-- `test_rejects_invalid_configuration`: Assures Pydantic validates boundaries (e.g. invalid ports).
-- `test_rejects_missing_required_configuration`: Assures missing config files raise `ConfigurationFileNotFoundError`.
-- `test_caches_immutable_settings_until_refresh`: Verifies that the service retrieves configuration from cache by default.
+Unit tests were executed under `tests/unit/infrastructure/test_logging.py`:
+- `test_logger_factory_creates_and_caches_loggers`
+- `test_context_storage_is_thread_safe`
+- `test_context_manager_restores_previous_state`
+- `test_structured_formatter_outputs_json`
+- `test_log_execution_time_outputs_perf_metadata`
+- `test_logging_service_configures_stream_and_rotating_file`
+- `test_logging_service_fails_with_invalid_config`
 
 ## Verification Results
-All 7 unit tests passed successfully.
+All 14 unit tests (7 for config, 7 for logging) passed successfully:
 ```powershell
 $env:PYTHONPATH="src"
 python -m unittest discover -s tests/unit -p "test_*.py"
-Ran 7 tests in 0.121s
+Ran 14 tests in 0.114s
 OK
 ```
 
 ## Handbook Chapters Covered
-- **Book 01 - System Architecture**: Specifically, the separation of immutable business rules from infrastructure configurations (database connection string, host, port, secrets, transport etc.).
+- **Book 01 - System Architecture**: Specifically, structured, correlation-capable, trace-enabled logging framework.
 
 ## Assumptions
-- Non-functional settings (such as path structures, logs, and upload directory names) are treated as absolute paths upon validation.
-- Dotenv variables starting with `ATS_` prefix are treated as overrides.
+- Logging is entirely domain-agnostic. No domain terms (ATS, Resume, Match, Scorer) are defined within the logging core.
+- Context metadata values are thread-safe and isolated per-thread or per-async task.
 
 ## Technical Debt
 None.
 
 ## Future Extension Points
-- Connection configurations for databases, message queues, and embedding model servers can be added as new fields in `ApplicationSettings` when those components are introduced.
+- Future logs from business logic modules (Books 02-08) can pass context values such as `evaluation_id` or `correlation_id` via the generic context variables to automatically group pipeline operations.
