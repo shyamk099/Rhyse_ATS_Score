@@ -1,0 +1,15 @@
+application_name: ats-resume-intelligence-engine
+application_version: 1.0.0
+host: 127.0.0.1
+port: 8000
+api_prefix: /api/v1
+upload_directory: var/development/uploads
+temporary_directory: var/development/tmp
+log_directory: var/development/logs
+rule_directory: rules
+configuration_directory: config
+allowed_origins:
+  - http://localhost:3000
+timezone: UTC
+encoding: utf-8
+logging_configuration_path: config/logging.yaml
