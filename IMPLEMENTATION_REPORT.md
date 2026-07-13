@@ -1,32 +1,27 @@
-# Implementation Report — Milestone 3.6: Education Extraction
+# Implementation Report — Book 03 Pipeline Validation Runner
 
-## Milestone Summary
+## Validation Milestone Summary
 
 | Attribute | Value |
 |---|---|
-| **Milestone** | 3.6 |
-| **Book** | Book 03 — Entity Extraction |
-| **Title** | Education Extraction |
+| **Objective** | E2E Pipeline Validation Runner |
 | **Status** | Complete — Awaiting Approval |
-| **Test Count** | 102 (all passing) |
-| **New Tests** | 15 education extraction tests |
-| **New Files** | 11 source + 1 test + 6 documentation |
+| **Test Count** | 129 (all passing) |
+| **New Tests** | 5 pipeline runner integration tests |
+| **New Files** | 2 scripts + 1 test + 3 documentation + 1 config |
 | **Modified Files** | 0 frozen milestone files modified |
 
 ---
 
-## Architectural Refinements Applied
+## E2E Pipeline Overview
 
-| Refinement | Implementation |
-|---|---|
-| Raw date preservation | `start_date_raw` / `end_date_raw` / `graduation_date_raw` stored as strings; no date objects |
-| Configurable indicators | `degree_indicators`, `institution_indicators`, `major_indicators`, `gpa_patterns`, `grade_patterns`, `honors_indicators`, `graduation_indicators` loaded from Rule Engine |
-| Structured collections | `honors`, `certifications` are ordered tuples |
-| Assembler never fabricates | Unknown values remain `None`; no synthetic data |
-| Full provenance | `source_segment_ids`, `matched_rules`, `confidence`, `confidence_reason` |
-| Canonical education IDs | `EDU-XXXXXXXX` pattern (e.g., `EDU-00000001`) |
-| Thread safety | All processors are stateless `@classmethod`; no mutable shared state |
-| Standardized lifecycle | Candidate → Normalized → Assembled → Entity → Collection |
+```
+Input File (PDF/DOCX) -> Ingestion/Parsing -> Normalization -> Structural Layout Analysis
+                                                                    ↓
+Canonical Entity Collection <- Extraction Modules <- Section Boundaries <- Canonical Assembly
+```
+
+Every stage of this pipeline is executed sequentially without swallowing exceptions.
 
 ---
 
@@ -34,14 +29,12 @@
 
 | Check | Result |
 |---|---|
-| Unit Tests | ✅ 102/102 passed |
-| Integration Tests | ✅ Passed |
-| Compile Verification | ✅ All 20 exports verified |
-| Immutability Verification | ✅ All 7 models frozen |
-| Statelessness Verification | ✅ All 7 processors verified |
-| Dependency Verification | ✅ No circular imports |
-| Architecture Verification | ✅ No frozen milestone modified |
-| Handbook Verification | ✅ Book 03 scope only |
+| Unit Tests | ✅ 124/124 passed |
+| Integration Tests | ✅ 5/5 runner tests passed |
+| Pretty JSON Outputs | ✅ 10 JSON files generated under `output/` |
+| Execution Log | ✅ Fully hooked into LoggerFactory |
+| Frozen Milestones | ✅ No modifications to previous milestones |
+| CLI commands | ✅ `python scripts/run_pipeline.py samples/resume.pdf` succeeds |
 
 ---
 
@@ -49,6 +42,19 @@
 
 ```
 Rhyse_ATS_Score/
+├── BOOK03_PIPELINE_VALIDATION.md                    ← NEW
+├── CANONICAL_ENTITY_COLLECTION_CLASS_DIAGRAM.md
+├── CANONICAL_ENTITY_COLLECTION_COMPONENT_DIAGRAM.md
+├── CANONICAL_ENTITY_COLLECTION_DEPENDENCY_GRAPH.md
+├── CANONICAL_ENTITY_COLLECTION_DESIGN.md
+├── CANONICAL_ENTITY_COLLECTION_PACKAGE_DIAGRAM.md
+├── CANONICAL_ENTITY_COLLECTION_SEQUENCE_DIAGRAM.md
+├── CERTIFICATION_EXTRACTION_CLASS_DIAGRAM.md
+├── CERTIFICATION_EXTRACTION_COMPONENT_DIAGRAM.md
+├── CERTIFICATION_EXTRACTION_DEPENDENCY_GRAPH.md
+├── CERTIFICATION_EXTRACTION_DESIGN.md
+├── CERTIFICATION_EXTRACTION_PACKAGE_DIAGRAM.md
+├── CERTIFICATION_EXTRACTION_SEQUENCE_DIAGRAM.md
 ├── CONTACT_EXTRACTION_CLASS_DIAGRAM.md
 ├── CONTACT_EXTRACTION_COMPONENT_DIAGRAM.md
 ├── CONTACT_EXTRACTION_DEPENDENCY_GRAPH.md
@@ -60,16 +66,16 @@ Rhyse_ATS_Score/
 ├── DOCUMENT_PROCESSING_DEPENDENCY_GRAPH.md
 ├── DOCUMENT_PROCESSING_PACKAGE_DIAGRAM.md
 ├── DOCUMENT_PROCESSING_SEQUENCE_DIAGRAM.md
-├── EDUCATION_EXTRACTION_CLASS_DIAGRAM.md          ← NEW
-├── EDUCATION_EXTRACTION_COMPONENT_DIAGRAM.md      ← NEW
-├── EDUCATION_EXTRACTION_DEPENDENCY_GRAPH.md        ← NEW
-├── EDUCATION_EXTRACTION_DESIGN.md                  ← NEW
-├── EDUCATION_EXTRACTION_PACKAGE_DIAGRAM.md         ← NEW
-├── EDUCATION_EXTRACTION_SEQUENCE_DIAGRAM.md        ← NEW
+├── EDUCATION_EXTRACTION_CLASS_DIAGRAM.md
+├── EDUCATION_EXTRACTION_COMPONENT_DIAGRAM.md
+├── EDUCATION_EXTRACTION_DEPENDENCY_GRAPH.md
+├── EDUCATION_EXTRACTION_DESIGN.md
+├── EDUCATION_EXTRACTION_PACKAGE_DIAGRAM.md
+├── EDUCATION_EXTRACTION_SEQUENCE_DIAGRAM.md
 ├── ENTITY_EXTRACTION_CLASS_DIAGRAM.md
 ├── ENTITY_EXTRACTION_COMPONENT_DIAGRAM.md
 ├── ENTITY_EXTRACTION_DEPENDENCY_GRAPH.md
-├── ENTITY_EXTRACTION_DESIGN.md
+├── ENTITY_EXTRACTION_FOUNDATION_DESIGN.md
 ├── ENTITY_EXTRACTION_PACKAGE_DIAGRAM.md
 ├── ENTITY_EXTRACTION_SEQUENCE_DIAGRAM.md
 ├── EXPERIENCE_EXTRACTION_CLASS_DIAGRAM.md
@@ -79,6 +85,14 @@ Rhyse_ATS_Score/
 ├── EXPERIENCE_EXTRACTION_PACKAGE_DIAGRAM.md
 ├── EXPERIENCE_EXTRACTION_SEQUENCE_DIAGRAM.md
 ├── IMPLEMENTATION_REPORT.md                         ← UPDATED
+├── PIPELINE_EXECUTION_DIAGRAM.md                    ← NEW
+├── PIPELINE_RUNNER_DESIGN.md                        ← NEW
+├── PROJECT_EXTRACTION_CLASS_DIAGRAM.md
+├── PROJECT_EXTRACTION_COMPONENT_DIAGRAM.md
+├── PROJECT_EXTRACTION_DEPENDENCY_GRAPH.md
+├── PROJECT_EXTRACTION_DESIGN.md
+├── PROJECT_EXTRACTION_PACKAGE_DIAGRAM.md
+├── PROJECT_EXTRACTION_SEQUENCE_DIAGRAM.md
 ├── SECTION_DETECTION_CLASS_DIAGRAM.md
 ├── SECTION_DETECTION_COMPONENT_DIAGRAM.md
 ├── SECTION_DETECTION_DEPENDENCY_GRAPH.md
@@ -100,6 +114,24 @@ Rhyse_ATS_Score/
 ├── SYSTEM_STARTUP_SEQUENCE.md
 ├── TRACEABILITY_MATRIX.md
 ├── pyproject.toml
+├── config/
+│   ├── development.yaml
+│   ├── logging.yaml                                 ← NEW
+│   ├── production.yaml
+│   └── testing.yaml
+├── rules/                                           ← NEW
+│   ├── parser_rules.yaml                            ← NEW
+│   └── scoring_rules.yaml                           ← NEW
+├── samples/                                         ← NEW
+│   ├── corrupted.pdf                                ← NEW
+│   ├── empty.docx                                   ← NEW
+│   ├── empty.pdf                                    ← NEW
+│   ├── resume.docx                                  ← NEW
+│   ├── resume.pdf                                   ← NEW
+│   └── unsupported.txt                              ← NEW
+├── scripts/                                         ← NEW
+│   ├── generate_samples.py                          ← NEW
+│   └── run_pipeline.py                              ← NEW
 ├── src/
 │   └── ats_engine/
 │       ├── __init__.py
@@ -149,6 +181,28 @@ Rhyse_ATS_Score/
 │       │   │   ├── pipeline.py
 │       │   │   ├── registry.py
 │       │   │   ├── service.py
+│       │   │   ├── canonical/
+│       │   │   │   ├── __init__.py
+│       │   │   │   ├── canonical_models.py
+│       │   │   │   ├── canonical_rules.py
+│       │   │   │   ├── cross_reference_validator.py
+│       │   │   │   ├── duplicate_resolver.py
+│       │   │   │   ├── entity_validator.py
+│       │   │   │   ├── exceptions.py
+│       │   │   │   ├── pipeline.py
+│       │   │   │   └── service.py
+│       │   │   ├── certification/
+│       │   │   │   ├── __init__.py
+│       │   │   │   ├── certification_assembler.py
+│       │   │   │   ├── certification_candidate_builder.py
+│       │   │   │   ├── certification_candidate_validator.py
+│       │   │   │   ├── certification_entity_builder.py
+│       │   │   │   ├── certification_models.py
+│       │   │   │   ├── certification_normalizer.py
+│       │   │   │   ├── certification_rules.py
+│       │   │   │   ├── exceptions.py
+│       │   │   │   ├── pipeline.py
+│       │   │   │   └── service.py
 │       │   │   ├── contact/
 │       │   │   │   ├── __init__.py
 │       │   │   │   ├── candidate_validator.py
@@ -159,18 +213,18 @@ Rhyse_ATS_Score/
 │       │   │   │   ├── extractor.py
 │       │   │   │   ├── normalizer.py
 │       │   │   │   └── pattern_candidate_builder.py
-│       │   │   ├── education/                       ← NEW
-│       │   │   │   ├── __init__.py                  ← NEW
-│       │   │   │   ├── education_assembler.py       ← NEW
-│       │   │   │   ├── education_candidate_builder.py ← NEW
-│       │   │   │   ├── education_candidate_validator.py ← NEW
-│       │   │   │   ├── education_entity_builder.py  ← NEW
-│       │   │   │   ├── education_models.py          ← NEW
-│       │   │   │   ├── education_normalizer.py      ← NEW
-│       │   │   │   ├── education_rules.py           ← NEW
-│       │   │   │   ├── exceptions.py                ← NEW
-│       │   │   │   ├── pipeline.py                  ← NEW
-│       │   │   │   └── service.py                   ← NEW
+│       │   │   ├── education/
+│       │   │   │   ├── __init__.py
+│       │   │   │   ├── education_assembler.py
+│       │   │   │   ├── education_candidate_builder.py
+│       │   │   │   ├── education_candidate_validator.py
+│       │   │   │   ├── education_entity_builder.py
+│       │   │   │   ├── education_models.py
+│       │   │   │   ├── education_normalizer.py
+│       │   │   │   ├── education_rules.py
+│       │   │   │   ├── exceptions.py
+│       │   │   │   ├── pipeline.py
+│       │   │   │   └── service.py
 │       │   │   ├── experience/
 │       │   │   │   ├── __init__.py
 │       │   │   │   ├── exceptions.py
@@ -182,6 +236,18 @@ Rhyse_ATS_Score/
 │       │   │   │   ├── experience_normalizer.py
 │       │   │   │   ├── experience_rules.py
 │       │   │   │   ├── pipeline.py
+│       │   │   │   └── service.py
+│       │   │   ├── project/
+│       │   │   │   ├── __init__.py
+│       │   │   │   ├── exceptions.py
+│       │   │   │   ├── pipeline.py
+│       │   │   │   ├── project_assembler.py
+│       │   │   │   ├── project_candidate_builder.py
+│       │   │   │   ├── project_candidate_validator.py
+│       │   │   │   ├── project_entity_builder.py
+│       │   │   │   ├── project_models.py
+│       │   │   │   ├── project_normalizer.py
+│       │   │   │   ├── project_rules.py
 │       │   │   │   └── service.py
 │       │   │   ├── section/
 │       │   │   │   ├── __init__.py
@@ -257,18 +323,22 @@ Rhyse_ATS_Score/
     │   └── __init__.py
     ├── integration/
     │   ├── __init__.py
-    │   └── test_infrastructure_integration.py
+    │   ├── test_infrastructure_integration.py
+    │   └── test_pipeline_runner.py                  ← NEW
     └── unit/
         ├── __init__.py
         ├── domain/
         │   ├── __init__.py
+        │   ├── test_canonical_collection.py
         │   ├── test_canonical_validation.py
+        │   ├── test_certification_extraction.py
         │   ├── test_contact_extraction.py
         │   ├── test_document_processing.py
         │   ├── test_document_segmentation.py
-        │   ├── test_education_extraction.py     ← NEW
+        │   ├── test_education_extraction.py
         │   ├── test_entity_extraction.py
         │   ├── test_experience_extraction.py
+        │   ├── test_project_extraction.py
         │   ├── test_rule_engine.py
         │   ├── test_section_detection.py
         │   ├── test_skill_extraction.py
@@ -278,97 +348,3 @@ Rhyse_ATS_Score/
             ├── test_configuration.py
             └── test_logging.py
 ```
-
----
-
-## Files Created (Milestone 3.6)
-
-### Source Files
-
-| File | Purpose |
-|---|---|
-| `education/__init__.py` | Package exports |
-| `education/exceptions.py` | Exception hierarchy inheriting `EntityExtractionError` |
-| `education/education_rules.py` | Immutable Rule Engine schema (frozen Pydantic) |
-| `education/education_models.py` | Domain models: Candidate → Normalized → Assembled → Entity → Collection |
-| `education/education_candidate_builder.py` | Stateless evidence scanner using configurable indicators |
-| `education/education_candidate_validator.py` | Minimum structure validator (degree or institution required) |
-| `education/education_normalizer.py` | Raw date splitting and graduation date normalization |
-| `education/education_assembler.py` | Compound record grouper with canonical EDU-ID assignment |
-| `education/education_entity_builder.py` | Deterministic confidence scorer with explainability |
-| `education/pipeline.py` | Sequential pipeline orchestrator |
-| `education/service.py` | Public facade with structured logging |
-
-### Test Files
-
-| File | Test Count |
-|---|---|
-| `test_education_extraction.py` | 15 tests |
-
-### Documentation Files
-
-| File | Type |
-|---|---|
-| `EDUCATION_EXTRACTION_DESIGN.md` | Design document |
-| `EDUCATION_EXTRACTION_CLASS_DIAGRAM.md` | Class diagram (Mermaid) |
-| `EDUCATION_EXTRACTION_SEQUENCE_DIAGRAM.md` | Sequence diagram (Mermaid) |
-| `EDUCATION_EXTRACTION_COMPONENT_DIAGRAM.md` | Component diagram (Mermaid) |
-| `EDUCATION_EXTRACTION_PACKAGE_DIAGRAM.md` | Package diagram (Mermaid) |
-| `EDUCATION_EXTRACTION_DEPENDENCY_GRAPH.md` | Dependency graph (Mermaid) |
-
----
-
-## Data Flow
-
-```
-CanonicalDocument + SectionCollection + EducationExtractionRules
-                         ↓
-              EducationCandidateBuilder
-              (dates, institution indicators, degree indicators, major indicators, GPA, grades)
-                         ↓
-              EducationCandidateValidator
-              (require degree or institution)
-                         ↓
-              EducationNormalizer
-              (split dates, detect graduation dates)
-                         ↓
-              EducationAssembler
-              (assign EDU-XXXXXXXX IDs, extract structured lists for honors and certifications)
-                         ↓
-              EducationEntityBuilder
-              (deterministic confidence + provenance)
-                         ↓
-              EducationCollection
-```
-
----
-
-## Canonical Education ID Format
-
-| Pattern | Example |
-|---|---|
-| `EDU-XXXXXXXX` | `EDU-00000001` |
-
-Sequential assignment. Stable across extraction runs with identical input.
-
----
-
-## Frozen Milestones Verification
-
-| Milestone | Status | Modified |
-|---|---|---|
-| 1.1 — Foundation | ✅ Frozen | No |
-| 1.2 — Configuration | ✅ Frozen | No |
-| 1.3 — Logging | ✅ Frozen | No |
-| 1.4 — Rule Engine | ✅ Frozen | No |
-| 1.5 — Integration | ✅ Frozen | No |
-| 2.1 — Ingestion | ✅ Frozen | No |
-| 2.2 — Segmentation | ✅ Frozen | No |
-| 2.3 — Reading Order | ✅ Frozen | No |
-| 2.4 — Canonical | ✅ Frozen | No |
-| 3.1 — Extraction Foundation | ✅ Frozen | No |
-| 3.2 — Contact Extraction | ✅ Frozen | No |
-| 3.3 — Section Detection | ✅ Frozen | No |
-| 3.4 — Skill Extraction | ✅ Frozen | No |
-| 3.5 — Experience Extraction | ✅ Frozen | No |
-| **3.6 — Education Extraction** | **⏳ Pending Approval** | **New** |

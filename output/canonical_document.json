@@ -1,0 +1,3306 @@
+{
+    "canonical_id": "doc_19701ecd00a6",
+    "normalized_document": {
+        "cleaned_content": "MADHU SHYAM SUNDAR REDDY KOTA\n\n+91 76719 29829 | mailto:shyamshs2002@gmail.com |\nlinkedin.com/in/shyam-kota-9435881a2\n\nSUMMARY\nCertified Data Engineer with experience designing and maintaining scalable data pipelines using PySpark, SQL, Databricks,\nand AWS. Skilled in building cloud-native data platforms, optimizing data processing workflows through Delta Lake and\nserverless architectures, and implementing robust data validation frameworks. Experienced in Generative AI and LLM-based\nanalytics with hands-on expertise in Amazon Bedrock, LangChain, and RAG. Proven ability to reduce infrastructure costs,\nautomate manual processes, and deliver maintainable solutions that support data-driven decision-making across\nmanufacturing and analytics domains.\nTECHNICAL SKI LLS\nCloud & DevOps\n•\nAWS Services: S3, EMR, Lambda, DynamoDB, Redshift, CloudWatch, AppRunner, Amplify\n•\nGCP Services: Cloud Run, Artifact Registry, Cloud Build, IAM, BigQuery, Firestore, Cloud Storage\n•\nDevOps & CI/CD: GitHub Actions\nData Engineering\n•\nPySpark, Delta Lake, Databricks, SQL\nGenerative AI\n•\nAmazon Bedrock (Nova), Vertex AI, Vertex AI Vector Search, LangChain, RAG\nProgramming & Development\n•\nLanguages: Python, SQL\n•\nTools & Frameworks: FastAPI, Pandas, PyYAML\n\nEXPERIENCE\nSoftware Engineer, Info Services\n\nINAAS (Insight-as-a-Service) – AI\nAnalytics Agent\n\nJan 2024 - Present\n•\nDeveloped an AI-powered analytics agent that converts natural language questions into SQL queries and delivers\nreal-time insights, enabling non-technical users to query data warehouses without writing code\n•\nAchieved 90% query accuracy with response times under 30 seconds for standard datasets, leveraging Amazon\nBedrock (Nova) with LangChain and RAG for context-aware SQL generation\n•\nDesigned a multi-data warehouse query engine supporting Databricks SQL and PostgreSQL through a unified\nabstraction layer, with S3 as a data lake backend\n•\nImplemented session-aware memory using DynamoDB, enabling multi-turn analytical conversations where the\nagent remembers context across queries\n•\nResearched and applied RAG architecture and prompt engineering techniques to train the LLM on schema\nunderstanding and complex query generation, overcoming challenges in handling diverse user question patterns\n•\nDeployed a serverless production-ready architecture using AWS AppRunner (backend) and AWS Amplify\n(frontend), currently being demoed to prospective clients\nTech Stack: Python, SQL, LangChain, Amazon Bedrock (Nova), Databricks SQL, PostgreSQL, AWS S3, DynamoDB, RAG, AWS\nAppRunner, AWS Amplify\n\nData Migration Engineer – Oracle to BigQuery Modernization\n(Client/Internal Project)\n\n•\nWorked on migrating enterprise data workflows from Oracle to Google BigQuery, redesigning existing ETL\npipelines and adapting transformation logic for the GCP ecosystem.\n•\nSupported migration of 50–60 TB of historical and incremental data from on-prem/Oracle systems to Google\nCloud Platform (GCP).\n•\nDeveloped and modified workflows for loading, transforming, and validating large-scale datasets in BigQuery.\n•\nUtilized GCP services including BigQuery, Cloud Run, Google Cloud Storage (GCS), IAM, and Cloud Logging to\nbuild scalable cloud-native data solutions.\n•\nImplemented optimized data ingestion and storage strategies to improve query performance and reduce\nprocessing overhead in BigQuery.\n•\nCollaborated with cross-functional teams to ensure schema compatibility, data validation, and successful\nmigration with minimal downtime.\n•\nAutomated deployment and monitoring processes using CI/CD and cloud-native tooling.\n\nTech Stack: BigQuery, GCP, Cloud Run, GCS, SQL, Python, Data Migration, ETL, Oracle, IAM, Cloud Logging\nHarrys Inc. – Data Engineer (Manufacturing Analytics)\n•\nBuilt an end-to-end data pipeline to centralize and analyze razor manufacturing data, enabling data-driven insights\nfor production optimization, quality control, and operational decision-making\n•\nEngineered a medallion architecture (Raw → Silver → Gold) using Delta Lake, processing 2GB daily from 4 source\ntypes (CSV, ZIP, PDF) via PySpark on EMR Serverless\n•\nBuilt 15 data assets (7 dimension tables, 8 fact tables, 5 stored procedures, 10 views) in Redshift, powering 4 Power\nBI dashboards for 3 business analysts\n•\nImplemented data validation rules to filter junk records and handle schema drift, automating 10-20 hours/week of\nmanual Excel-based analysis\n•\nOptimized processing by splitting monolithic tables into 2 specialized fact tables, reducing query complexity\nand improving join performance\n•\nReduced infrastructure costs using Delta Lake for S3 storage optimization and EMR Serverless for on-demand\nprocessing with GitHub Actions CI/CD\nTech Stack: PySpark, AWS EMR Serverless, S3, Delta Lake, Redshift, SQL, Power BI\nSynthetic Data Generator – Open Source Project\n•\nBuilt a zero-cost LLM-powered CLI tool to generate realistic synthetic CSV data from YAML schemas, solving\nthe challenge of lacking test data for pipeline development\n•\nGenerates 10K records/minute using free open-source LLM APIs (Groq, Hugging Face) with validation\nsupport (unique, not null) and reference dataset integration\n•\nImplemented a pluggable adapter pattern for token-safe prompt generation and automated deployment via\nGitHub Actions\n•\nUsed in personal projects to generate mock datasets for testing data pipelines and demos, eliminating\ndependency on production data\nTech Stack: Python, LangChain, Groq, Hugging Face, GitHub Actions, PyPI\nCERTIFICATIONS\nAWS Certified Cloud Practitioner\nDatabricks Certified Data Engineer Associate\nGCP Associate Data Practitioner Certification\nAWS Certified Data Engineer Associate\nDatabricks Certified Generative AI Engineer Associate\nGCP Generative AI Leader Certification\n\nEDUCATION\nB.Tech – Electronics and Communication\nEngineering\nKalasalingam Academy of Research and Education – 8.67 CGPA",
+        "paragraph_count": 10,
+        "line_count": 121,
+        "char_count": 5854
+    },
+    "document_layout": {
+        "blocks": [
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "MADHU SHYAM SUNDAR REDDY KOTA",
+                        "line_number": 1,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 29
+                    }
+                ],
+                "raw_text": "MADHU SHYAM SUNDAR REDDY KOTA"
+            },
+            {
+                "block_type": "TABLE",
+                "lines": [
+                    {
+                        "text": "+91 76719 29829 | mailto:shyamshs2002@gmail.com |",
+                        "line_number": 2,
+                        "page_number": 1,
+                        "indentation_spaces": 1,
+                        "character_count": 49
+                    }
+                ],
+                "raw_text": "+91 76719 29829 | mailto:shyamshs2002@gmail.com |"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "linkedin.com/in/shyam-kota-9435881a2",
+                        "line_number": 3,
+                        "page_number": 1,
+                        "indentation_spaces": 1,
+                        "character_count": 36
+                    }
+                ],
+                "raw_text": "linkedin.com/in/shyam-kota-9435881a2"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "SUMMARY",
+                        "line_number": 4,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 7
+                    }
+                ],
+                "raw_text": "SUMMARY"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Certified Data Engineer with experience designing and maintaining scalable data pipelines using PySpark, SQL, Databricks,",
+                        "line_number": 5,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 121
+                    },
+                    {
+                        "text": "and AWS. Skilled in building cloud-native data platforms, optimizing data processing workflows through Delta Lake and",
+                        "line_number": 6,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 117
+                    },
+                    {
+                        "text": "serverless architectures, and implementing robust data validation frameworks. Experienced in Generative AI and LLM-based",
+                        "line_number": 7,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 120
+                    },
+                    {
+                        "text": "analytics with hands-on expertise in Amazon Bedrock, LangChain, and RAG. Proven ability to reduce infrastructure costs,",
+                        "line_number": 8,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 119
+                    },
+                    {
+                        "text": "automate manual processes, and deliver maintainable solutions that support data-driven decision-making across",
+                        "line_number": 9,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 109
+                    },
+                    {
+                        "text": "manufacturing and analytics domains.",
+                        "line_number": 10,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 36
+                    }
+                ],
+                "raw_text": "Certified Data Engineer with experience designing and maintaining scalable data pipelines using PySpark, SQL, Databricks,\nand AWS. Skilled in building cloud-native data platforms, optimizing data processing workflows through Delta Lake and\nserverless architectures, and implementing robust data validation frameworks. Experienced in Generative AI and LLM-based\nanalytics with hands-on expertise in Amazon Bedrock, LangChain, and RAG. Proven ability to reduce infrastructure costs,\nautomate manual processes, and deliver maintainable solutions that support data-driven decision-making across\nmanufacturing and analytics domains."
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "TECHNICAL SKI LLS",
+                        "line_number": 11,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 17
+                    }
+                ],
+                "raw_text": "TECHNICAL SKI LLS"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Cloud & DevOps",
+                        "line_number": 12,
+                        "page_number": 1,
+                        "indentation_spaces": 15,
+                        "character_count": 14
+                    }
+                ],
+                "raw_text": "Cloud & DevOps"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 13,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "AWS Services: S3, EMR, Lambda, DynamoDB, Redshift, CloudWatch, AppRunner, Amplify",
+                        "line_number": 14,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 81
+                    }
+                ],
+                "raw_text": "AWS Services: S3, EMR, Lambda, DynamoDB, Redshift, CloudWatch, AppRunner, Amplify"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 15,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "GCP Services: Cloud Run, Artifact Registry, Cloud Build, IAM, BigQuery, Firestore, Cloud Storage",
+                        "line_number": 16,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 96
+                    }
+                ],
+                "raw_text": "GCP Services: Cloud Run, Artifact Registry, Cloud Build, IAM, BigQuery, Firestore, Cloud Storage"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 17,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "DevOps & CI/CD: GitHub Actions",
+                        "line_number": 18,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 30
+                    }
+                ],
+                "raw_text": "DevOps & CI/CD: GitHub Actions"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Data Engineering",
+                        "line_number": 19,
+                        "page_number": 1,
+                        "indentation_spaces": 14,
+                        "character_count": 16
+                    }
+                ],
+                "raw_text": "Data Engineering"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 20,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "PySpark, Delta Lake, Databricks, SQL",
+                        "line_number": 21,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 36
+                    }
+                ],
+                "raw_text": "PySpark, Delta Lake, Databricks, SQL"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Generative AI",
+                        "line_number": 22,
+                        "page_number": 1,
+                        "indentation_spaces": 15,
+                        "character_count": 13
+                    }
+                ],
+                "raw_text": "Generative AI"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 23,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Amazon Bedrock (Nova), Vertex AI, Vertex AI Vector Search, LangChain, RAG",
+                        "line_number": 24,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 73
+                    }
+                ],
+                "raw_text": "Amazon Bedrock (Nova), Vertex AI, Vertex AI Vector Search, LangChain, RAG"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Programming & Development",
+                        "line_number": 25,
+                        "page_number": 1,
+                        "indentation_spaces": 16,
+                        "character_count": 25
+                    }
+                ],
+                "raw_text": "Programming & Development"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 26,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Languages: Python, SQL",
+                        "line_number": 27,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 22
+                    }
+                ],
+                "raw_text": "Languages: Python, SQL"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 28,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Tools & Frameworks: FastAPI, Pandas, PyYAML",
+                        "line_number": 29,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 43
+                    }
+                ],
+                "raw_text": "Tools & Frameworks: FastAPI, Pandas, PyYAML"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "EXPERIENCE",
+                        "line_number": 30,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 10
+                    }
+                ],
+                "raw_text": "EXPERIENCE"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Software Engineer, Info Services",
+                        "line_number": 31,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 32
+                    }
+                ],
+                "raw_text": "Software Engineer, Info Services"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "INAAS (Insight-as-a-Service) – AI",
+                        "line_number": 32,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 33
+                    }
+                ],
+                "raw_text": "INAAS (Insight-as-a-Service) – AI"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Analytics Agent",
+                        "line_number": 33,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 15
+                    }
+                ],
+                "raw_text": "Analytics Agent"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Jan 2024 - Present",
+                        "line_number": 34,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 18
+                    }
+                ],
+                "raw_text": "Jan 2024 - Present"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 35,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Developed an AI-powered analytics agent that converts natural language questions into SQL queries and delivers",
+                        "line_number": 36,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 110
+                    },
+                    {
+                        "text": "real-time insights, enabling non-technical users to query data warehouses without writing code",
+                        "line_number": 37,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 94
+                    }
+                ],
+                "raw_text": "Developed an AI-powered analytics agent that converts natural language questions into SQL queries and delivers\nreal-time insights, enabling non-technical users to query data warehouses without writing code"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 38,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Achieved 90% query accuracy with response times under 30 seconds for standard datasets, leveraging Amazon",
+                        "line_number": 39,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 105
+                    }
+                ],
+                "raw_text": "Achieved 90% query accuracy with response times under 30 seconds for standard datasets, leveraging Amazon"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Bedrock (Nova) with LangChain and RAG for context-aware SQL generation",
+                        "line_number": 40,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 70
+                    }
+                ],
+                "raw_text": "Bedrock (Nova) with LangChain and RAG for context-aware SQL generation"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 41,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Designed a multi-data warehouse query engine supporting Databricks SQL and PostgreSQL through a unified",
+                        "line_number": 42,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 103
+                    }
+                ],
+                "raw_text": "Designed a multi-data warehouse query engine supporting Databricks SQL and PostgreSQL through a unified"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "abstraction layer, with S3 as a data lake backend",
+                        "line_number": 43,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 49
+                    }
+                ],
+                "raw_text": "abstraction layer, with S3 as a data lake backend"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 44,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Implemented session-aware memory using DynamoDB, enabling multi-turn analytical conversations where the",
+                        "line_number": 45,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 103
+                    }
+                ],
+                "raw_text": "Implemented session-aware memory using DynamoDB, enabling multi-turn analytical conversations where the"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "agent remembers context across queries",
+                        "line_number": 46,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 38
+                    }
+                ],
+                "raw_text": "agent remembers context across queries"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 47,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Researched and applied RAG architecture and prompt engineering techniques to train the LLM on schema",
+                        "line_number": 48,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 100
+                    },
+                    {
+                        "text": "understanding and complex query generation, overcoming challenges in handling diverse user question patterns",
+                        "line_number": 49,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 108
+                    }
+                ],
+                "raw_text": "Researched and applied RAG architecture and prompt engineering techniques to train the LLM on schema\nunderstanding and complex query generation, overcoming challenges in handling diverse user question patterns"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 50,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Deployed a serverless production-ready architecture using AWS AppRunner (backend) and AWS Amplify",
+                        "line_number": 51,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 97
+                    }
+                ],
+                "raw_text": "Deployed a serverless production-ready architecture using AWS AppRunner (backend) and AWS Amplify"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "(frontend), currently being demoed to prospective clients",
+                        "line_number": 52,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 57
+                    }
+                ],
+                "raw_text": "(frontend), currently being demoed to prospective clients"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Tech Stack: Python, SQL, LangChain, Amazon Bedrock (Nova), Databricks SQL, PostgreSQL, AWS S3, DynamoDB, RAG, AWS",
+                        "line_number": 53,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 113
+                    }
+                ],
+                "raw_text": "Tech Stack: Python, SQL, LangChain, Amazon Bedrock (Nova), Databricks SQL, PostgreSQL, AWS S3, DynamoDB, RAG, AWS"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "AppRunner, AWS Amplify",
+                        "line_number": 54,
+                        "page_number": 1,
+                        "indentation_spaces": 0,
+                        "character_count": 22
+                    }
+                ],
+                "raw_text": "AppRunner, AWS Amplify"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Data Migration Engineer – Oracle to BigQuery Modernization",
+                        "line_number": 55,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 58
+                    }
+                ],
+                "raw_text": "Data Migration Engineer – Oracle to BigQuery Modernization"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "(Client/Internal Project)",
+                        "line_number": 56,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 25
+                    }
+                ],
+                "raw_text": "(Client/Internal Project)"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 57,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Worked on migrating enterprise data workflows from Oracle to Google BigQuery, redesigning existing ETL",
+                        "line_number": 58,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 102
+                    },
+                    {
+                        "text": "pipelines and adapting transformation logic for the GCP ecosystem.",
+                        "line_number": 59,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 66
+                    }
+                ],
+                "raw_text": "Worked on migrating enterprise data workflows from Oracle to Google BigQuery, redesigning existing ETL\npipelines and adapting transformation logic for the GCP ecosystem."
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 60,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Supported migration of 50–60 TB of historical and incremental data from on-prem/Oracle systems to Google",
+                        "line_number": 61,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 104
+                    },
+                    {
+                        "text": "Cloud Platform (GCP).",
+                        "line_number": 62,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 21
+                    }
+                ],
+                "raw_text": "Supported migration of 50–60 TB of historical and incremental data from on-prem/Oracle systems to Google\nCloud Platform (GCP)."
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 63,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Developed and modified workflows for loading, transforming, and validating large-scale datasets in BigQuery.",
+                        "line_number": 64,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 108
+                    }
+                ],
+                "raw_text": "Developed and modified workflows for loading, transforming, and validating large-scale datasets in BigQuery."
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 65,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Utilized GCP services including BigQuery, Cloud Run, Google Cloud Storage (GCS), IAM, and Cloud Logging to",
+                        "line_number": 66,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 106
+                    },
+                    {
+                        "text": "build scalable cloud-native data solutions.",
+                        "line_number": 67,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 43
+                    }
+                ],
+                "raw_text": "Utilized GCP services including BigQuery, Cloud Run, Google Cloud Storage (GCS), IAM, and Cloud Logging to\nbuild scalable cloud-native data solutions."
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 68,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Implemented optimized data ingestion and storage strategies to improve query performance and reduce",
+                        "line_number": 69,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 99
+                    },
+                    {
+                        "text": "processing overhead in BigQuery.",
+                        "line_number": 70,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 32
+                    }
+                ],
+                "raw_text": "Implemented optimized data ingestion and storage strategies to improve query performance and reduce\nprocessing overhead in BigQuery."
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 71,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Collaborated with cross-functional teams to ensure schema compatibility, data validation, and successful",
+                        "line_number": 72,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 104
+                    },
+                    {
+                        "text": "migration with minimal downtime.",
+                        "line_number": 73,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 32
+                    }
+                ],
+                "raw_text": "Collaborated with cross-functional teams to ensure schema compatibility, data validation, and successful\nmigration with minimal downtime."
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 74,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Automated deployment and monitoring processes using CI/CD and cloud-native tooling.",
+                        "line_number": 75,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 83
+                    },
+                    {
+                        "text": "Tech Stack: BigQuery, GCP, Cloud Run, GCS, SQL, Python, Data Migration, ETL, Oracle, IAM, Cloud Logging",
+                        "line_number": 76,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 103
+                    }
+                ],
+                "raw_text": "Automated deployment and monitoring processes using CI/CD and cloud-native tooling.\nTech Stack: BigQuery, GCP, Cloud Run, GCS, SQL, Python, Data Migration, ETL, Oracle, IAM, Cloud Logging"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Harrys Inc. – Data Engineer (Manufacturing Analytics)",
+                        "line_number": 77,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 53
+                    }
+                ],
+                "raw_text": "Harrys Inc. – Data Engineer (Manufacturing Analytics)"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 78,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Built an end-to-end data pipeline to centralize and analyze razor manufacturing data, enabling data-driven insights",
+                        "line_number": 79,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 115
+                    }
+                ],
+                "raw_text": "Built an end-to-end data pipeline to centralize and analyze razor manufacturing data, enabling data-driven insights"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "for production optimization, quality control, and operational decision-making",
+                        "line_number": 80,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 77
+                    }
+                ],
+                "raw_text": "for production optimization, quality control, and operational decision-making"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 81,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Engineered a medallion architecture (Raw → Silver → Gold) using Delta Lake, processing 2GB daily from 4 source",
+                        "line_number": 82,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 110
+                    }
+                ],
+                "raw_text": "Engineered a medallion architecture (Raw → Silver → Gold) using Delta Lake, processing 2GB daily from 4 source"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "types (CSV, ZIP, PDF) via PySpark on EMR Serverless",
+                        "line_number": 83,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 51
+                    }
+                ],
+                "raw_text": "types (CSV, ZIP, PDF) via PySpark on EMR Serverless"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 84,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Built 15 data assets (7 dimension tables, 8 fact tables, 5 stored procedures, 10 views) in Redshift, powering 4 Power",
+                        "line_number": 85,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 117
+                    }
+                ],
+                "raw_text": "Built 15 data assets (7 dimension tables, 8 fact tables, 5 stored procedures, 10 views) in Redshift, powering 4 Power"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "BI dashboards for 3 business analysts",
+                        "line_number": 86,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 37
+                    }
+                ],
+                "raw_text": "BI dashboards for 3 business analysts"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 87,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Implemented data validation rules to filter junk records and handle schema drift, automating 10-20 hours/week of",
+                        "line_number": 88,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 112
+                    }
+                ],
+                "raw_text": "Implemented data validation rules to filter junk records and handle schema drift, automating 10-20 hours/week of"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "manual Excel-based analysis",
+                        "line_number": 89,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 27
+                    }
+                ],
+                "raw_text": "manual Excel-based analysis"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 90,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Optimized processing by splitting monolithic tables into 2 specialized fact tables, reducing query complexity",
+                        "line_number": 91,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 109
+                    }
+                ],
+                "raw_text": "Optimized processing by splitting monolithic tables into 2 specialized fact tables, reducing query complexity"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "and improving join performance",
+                        "line_number": 92,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 30
+                    }
+                ],
+                "raw_text": "and improving join performance"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 93,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Reduced infrastructure costs using Delta Lake for S3 storage optimization and EMR Serverless for on-demand",
+                        "line_number": 94,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 106
+                    }
+                ],
+                "raw_text": "Reduced infrastructure costs using Delta Lake for S3 storage optimization and EMR Serverless for on-demand"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "processing with GitHub Actions CI/CD",
+                        "line_number": 95,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 36
+                    }
+                ],
+                "raw_text": "processing with GitHub Actions CI/CD"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Tech Stack: PySpark, AWS EMR Serverless, S3, Delta Lake, Redshift, SQL, Power BI",
+                        "line_number": 96,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 80
+                    }
+                ],
+                "raw_text": "Tech Stack: PySpark, AWS EMR Serverless, S3, Delta Lake, Redshift, SQL, Power BI"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Synthetic Data Generator – Open Source Project",
+                        "line_number": 97,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 46
+                    }
+                ],
+                "raw_text": "Synthetic Data Generator – Open Source Project"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 98,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Built a zero-cost LLM-powered CLI tool to generate realistic synthetic CSV data from YAML schemas, solving",
+                        "line_number": 99,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 106
+                    }
+                ],
+                "raw_text": "Built a zero-cost LLM-powered CLI tool to generate realistic synthetic CSV data from YAML schemas, solving"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "the challenge of lacking test data for pipeline development",
+                        "line_number": 100,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 59
+                    }
+                ],
+                "raw_text": "the challenge of lacking test data for pipeline development"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 101,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Generates 10K records/minute using free open-source LLM APIs (Groq, Hugging Face) with validation",
+                        "line_number": 102,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 97
+                    }
+                ],
+                "raw_text": "Generates 10K records/minute using free open-source LLM APIs (Groq, Hugging Face) with validation"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "support (unique, not null) and reference dataset integration",
+                        "line_number": 103,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 60
+                    }
+                ],
+                "raw_text": "support (unique, not null) and reference dataset integration"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 104,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Implemented a pluggable adapter pattern for token-safe prompt generation and automated deployment via",
+                        "line_number": 105,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 101
+                    }
+                ],
+                "raw_text": "Implemented a pluggable adapter pattern for token-safe prompt generation and automated deployment via"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "GitHub Actions",
+                        "line_number": 106,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 14
+                    }
+                ],
+                "raw_text": "GitHub Actions"
+            },
+            {
+                "block_type": "LIST",
+                "lines": [
+                    {
+                        "text": "•",
+                        "line_number": 107,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 1
+                    }
+                ],
+                "raw_text": "•"
+            },
+            {
+                "block_type": "TEXT",
+                "lines": [
+                    {
+                        "text": "Used in personal projects to generate mock datasets for testing data pipelines and demos, eliminating",
+                        "line_number": 108,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 101
+                    }
+                ],
+                "raw_text": "Used in personal projects to generate mock datasets for testing data pipelines and demos, eliminating"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "dependency on production data",
+                        "line_number": 109,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 29
+                    }
+                ],
+                "raw_text": "dependency on production data"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Tech Stack: Python, LangChain, Groq, Hugging Face, GitHub Actions, PyPI",
+                        "line_number": 110,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 71
+                    }
+                ],
+                "raw_text": "Tech Stack: Python, LangChain, Groq, Hugging Face, GitHub Actions, PyPI"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "CERTIFICATIONS",
+                        "line_number": 111,
+                        "page_number": 2,
+                        "indentation_spaces": 4,
+                        "character_count": 14
+                    }
+                ],
+                "raw_text": "CERTIFICATIONS"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "AWS Certified Cloud Practitioner",
+                        "line_number": 112,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 32
+                    }
+                ],
+                "raw_text": "AWS Certified Cloud Practitioner"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Databricks Certified Data Engineer Associate",
+                        "line_number": 113,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 44
+                    }
+                ],
+                "raw_text": "Databricks Certified Data Engineer Associate"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "GCP Associate Data Practitioner Certification",
+                        "line_number": 114,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 45
+                    }
+                ],
+                "raw_text": "GCP Associate Data Practitioner Certification"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "AWS Certified Data Engineer Associate",
+                        "line_number": 115,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 37
+                    }
+                ],
+                "raw_text": "AWS Certified Data Engineer Associate"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Databricks Certified Generative AI Engineer Associate",
+                        "line_number": 116,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 53
+                    }
+                ],
+                "raw_text": "Databricks Certified Generative AI Engineer Associate"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "GCP Generative AI Leader Certification",
+                        "line_number": 117,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 38
+                    }
+                ],
+                "raw_text": "GCP Generative AI Leader Certification"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "EDUCATION",
+                        "line_number": 118,
+                        "page_number": 2,
+                        "indentation_spaces": 5,
+                        "character_count": 9
+                    }
+                ],
+                "raw_text": "EDUCATION"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "B.Tech – Electronics and Communication",
+                        "line_number": 119,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 38
+                    }
+                ],
+                "raw_text": "B.Tech – Electronics and Communication"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Engineering",
+                        "line_number": 120,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 11
+                    }
+                ],
+                "raw_text": "Engineering"
+            },
+            {
+                "block_type": "HEADING",
+                "lines": [
+                    {
+                        "text": "Kalasalingam Academy of Research and Education – 8.67 CGPA",
+                        "line_number": 121,
+                        "page_number": 2,
+                        "indentation_spaces": 0,
+                        "character_count": 58
+                    }
+                ],
+                "raw_text": "Kalasalingam Academy of Research and Education – 8.67 CGPA"
+            }
+        ],
+        "total_blocks": 108,
+        "total_lines": 121
+    },
+    "segment_collection": {
+        "segments": [
+            {
+                "segment_id": "segment_0001",
+                "text_content": "MADHU SHYAM SUNDAR REDDY KOTA\n\n+91 76719 29829 | mailto:shyamshs2002@gmail.com |\n\nlinkedin.com/in/shyam-kota-9435881a2\n\nSUMMARY\n\nCertified Data Engineer with experience designing and maintaining scalable data pipelines using PySpark, SQL, Databricks,\nand AWS. Skilled in building cloud-native data platforms, optimizing data processing workflows through Delta Lake and\nserverless architectures, and implementing robust data validation frameworks. Experienced in Generative AI and LLM-based\nanalytics with hands-on expertise in Amazon Bedrock, LangChain, and RAG. Proven ability to reduce infrastructure costs,\nautomate manual processes, and deliver maintainable solutions that support data-driven decision-making across\nmanufacturing and analytics domains.\n\nTECHNICAL SKI LLS\n\nCloud & DevOps\n\n•",
+                "metadata": {
+                    "segment_id": "segment_0001",
+                    "reading_order": 1,
+                    "page_range": [
+                        1,
+                        1
+                    ],
+                    "block_range": [
+                        1,
+                        13
+                    ],
+                    "character_count": 794,
+                    "line_count": 13
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "MADHU SHYAM SUNDAR REDDY KOTA",
+                                "line_number": 1,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 29
+                            }
+                        ],
+                        "raw_text": "MADHU SHYAM SUNDAR REDDY KOTA"
+                    },
+                    {
+                        "block_type": "TABLE",
+                        "lines": [
+                            {
+                                "text": "+91 76719 29829 | mailto:shyamshs2002@gmail.com |",
+                                "line_number": 2,
+                                "page_number": 1,
+                                "indentation_spaces": 1,
+                                "character_count": 49
+                            }
+                        ],
+                        "raw_text": "+91 76719 29829 | mailto:shyamshs2002@gmail.com |"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "linkedin.com/in/shyam-kota-9435881a2",
+                                "line_number": 3,
+                                "page_number": 1,
+                                "indentation_spaces": 1,
+                                "character_count": 36
+                            }
+                        ],
+                        "raw_text": "linkedin.com/in/shyam-kota-9435881a2"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "SUMMARY",
+                                "line_number": 4,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 7
+                            }
+                        ],
+                        "raw_text": "SUMMARY"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Certified Data Engineer with experience designing and maintaining scalable data pipelines using PySpark, SQL, Databricks,",
+                                "line_number": 5,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 121
+                            },
+                            {
+                                "text": "and AWS. Skilled in building cloud-native data platforms, optimizing data processing workflows through Delta Lake and",
+                                "line_number": 6,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 117
+                            },
+                            {
+                                "text": "serverless architectures, and implementing robust data validation frameworks. Experienced in Generative AI and LLM-based",
+                                "line_number": 7,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 120
+                            },
+                            {
+                                "text": "analytics with hands-on expertise in Amazon Bedrock, LangChain, and RAG. Proven ability to reduce infrastructure costs,",
+                                "line_number": 8,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 119
+                            },
+                            {
+                                "text": "automate manual processes, and deliver maintainable solutions that support data-driven decision-making across",
+                                "line_number": 9,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 109
+                            },
+                            {
+                                "text": "manufacturing and analytics domains.",
+                                "line_number": 10,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 36
+                            }
+                        ],
+                        "raw_text": "Certified Data Engineer with experience designing and maintaining scalable data pipelines using PySpark, SQL, Databricks,\nand AWS. Skilled in building cloud-native data platforms, optimizing data processing workflows through Delta Lake and\nserverless architectures, and implementing robust data validation frameworks. Experienced in Generative AI and LLM-based\nanalytics with hands-on expertise in Amazon Bedrock, LangChain, and RAG. Proven ability to reduce infrastructure costs,\nautomate manual processes, and deliver maintainable solutions that support data-driven decision-making across\nmanufacturing and analytics domains."
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "TECHNICAL SKI LLS",
+                                "line_number": 11,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 17
+                            }
+                        ],
+                        "raw_text": "TECHNICAL SKI LLS"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Cloud & DevOps",
+                                "line_number": 12,
+                                "page_number": 1,
+                                "indentation_spaces": 15,
+                                "character_count": 14
+                            }
+                        ],
+                        "raw_text": "Cloud & DevOps"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 13,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0002",
+                "text_content": "AWS Services: S3, EMR, Lambda, DynamoDB, Redshift, CloudWatch, AppRunner, Amplify\n\n•\n\nGCP Services: Cloud Run, Artifact Registry, Cloud Build, IAM, BigQuery, Firestore, Cloud Storage\n\n•\n\nDevOps & CI/CD: GitHub Actions\n\nData Engineering\n\n•\n\nPySpark, Delta Lake, Databricks, SQL",
+                "metadata": {
+                    "segment_id": "segment_0002",
+                    "reading_order": 2,
+                    "page_range": [
+                        1,
+                        1
+                    ],
+                    "block_range": [
+                        14,
+                        21
+                    ],
+                    "character_count": 276,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "AWS Services: S3, EMR, Lambda, DynamoDB, Redshift, CloudWatch, AppRunner, Amplify",
+                                "line_number": 14,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 81
+                            }
+                        ],
+                        "raw_text": "AWS Services: S3, EMR, Lambda, DynamoDB, Redshift, CloudWatch, AppRunner, Amplify"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 15,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "GCP Services: Cloud Run, Artifact Registry, Cloud Build, IAM, BigQuery, Firestore, Cloud Storage",
+                                "line_number": 16,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 96
+                            }
+                        ],
+                        "raw_text": "GCP Services: Cloud Run, Artifact Registry, Cloud Build, IAM, BigQuery, Firestore, Cloud Storage"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 17,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "DevOps & CI/CD: GitHub Actions",
+                                "line_number": 18,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 30
+                            }
+                        ],
+                        "raw_text": "DevOps & CI/CD: GitHub Actions"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Data Engineering",
+                                "line_number": 19,
+                                "page_number": 1,
+                                "indentation_spaces": 14,
+                                "character_count": 16
+                            }
+                        ],
+                        "raw_text": "Data Engineering"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 20,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "PySpark, Delta Lake, Databricks, SQL",
+                                "line_number": 21,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 36
+                            }
+                        ],
+                        "raw_text": "PySpark, Delta Lake, Databricks, SQL"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0003",
+                "text_content": "Generative AI\n\n•\n\nAmazon Bedrock (Nova), Vertex AI, Vertex AI Vector Search, LangChain, RAG\n\nProgramming & Development\n\n•\n\nLanguages: Python, SQL\n\n•\n\nTools & Frameworks: FastAPI, Pandas, PyYAML",
+                "metadata": {
+                    "segment_id": "segment_0003",
+                    "reading_order": 3,
+                    "page_range": [
+                        1,
+                        1
+                    ],
+                    "block_range": [
+                        22,
+                        29
+                    ],
+                    "character_count": 193,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Generative AI",
+                                "line_number": 22,
+                                "page_number": 1,
+                                "indentation_spaces": 15,
+                                "character_count": 13
+                            }
+                        ],
+                        "raw_text": "Generative AI"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 23,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Amazon Bedrock (Nova), Vertex AI, Vertex AI Vector Search, LangChain, RAG",
+                                "line_number": 24,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 73
+                            }
+                        ],
+                        "raw_text": "Amazon Bedrock (Nova), Vertex AI, Vertex AI Vector Search, LangChain, RAG"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Programming & Development",
+                                "line_number": 25,
+                                "page_number": 1,
+                                "indentation_spaces": 16,
+                                "character_count": 25
+                            }
+                        ],
+                        "raw_text": "Programming & Development"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 26,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Languages: Python, SQL",
+                                "line_number": 27,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 22
+                            }
+                        ],
+                        "raw_text": "Languages: Python, SQL"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 28,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Tools & Frameworks: FastAPI, Pandas, PyYAML",
+                                "line_number": 29,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 43
+                            }
+                        ],
+                        "raw_text": "Tools & Frameworks: FastAPI, Pandas, PyYAML"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0004",
+                "text_content": "EXPERIENCE\n\nSoftware Engineer, Info Services\n\nINAAS (Insight-as-a-Service) – AI\n\nAnalytics Agent\n\nJan 2024 - Present\n\n•\n\nDeveloped an AI-powered analytics agent that converts natural language questions into SQL queries and delivers\nreal-time insights, enabling non-technical users to query data warehouses without writing code\n\n•",
+                "metadata": {
+                    "segment_id": "segment_0004",
+                    "reading_order": 4,
+                    "page_range": [
+                        1,
+                        1
+                    ],
+                    "block_range": [
+                        30,
+                        38
+                    ],
+                    "character_count": 329,
+                    "line_count": 9
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "EXPERIENCE",
+                                "line_number": 30,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 10
+                            }
+                        ],
+                        "raw_text": "EXPERIENCE"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Software Engineer, Info Services",
+                                "line_number": 31,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 32
+                            }
+                        ],
+                        "raw_text": "Software Engineer, Info Services"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "INAAS (Insight-as-a-Service) – AI",
+                                "line_number": 32,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 33
+                            }
+                        ],
+                        "raw_text": "INAAS (Insight-as-a-Service) – AI"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Analytics Agent",
+                                "line_number": 33,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 15
+                            }
+                        ],
+                        "raw_text": "Analytics Agent"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Jan 2024 - Present",
+                                "line_number": 34,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 18
+                            }
+                        ],
+                        "raw_text": "Jan 2024 - Present"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 35,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Developed an AI-powered analytics agent that converts natural language questions into SQL queries and delivers",
+                                "line_number": 36,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 110
+                            },
+                            {
+                                "text": "real-time insights, enabling non-technical users to query data warehouses without writing code",
+                                "line_number": 37,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 94
+                            }
+                        ],
+                        "raw_text": "Developed an AI-powered analytics agent that converts natural language questions into SQL queries and delivers\nreal-time insights, enabling non-technical users to query data warehouses without writing code"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 38,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0005",
+                "text_content": "Achieved 90% query accuracy with response times under 30 seconds for standard datasets, leveraging Amazon\n\nBedrock (Nova) with LangChain and RAG for context-aware SQL generation\n\n•\n\nDesigned a multi-data warehouse query engine supporting Databricks SQL and PostgreSQL through a unified\n\nabstraction layer, with S3 as a data lake backend\n\n•\n\nImplemented session-aware memory using DynamoDB, enabling multi-turn analytical conversations where the\n\nagent remembers context across queries",
+                "metadata": {
+                    "segment_id": "segment_0005",
+                    "reading_order": 5,
+                    "page_range": [
+                        1,
+                        1
+                    ],
+                    "block_range": [
+                        39,
+                        46
+                    ],
+                    "character_count": 484,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Achieved 90% query accuracy with response times under 30 seconds for standard datasets, leveraging Amazon",
+                                "line_number": 39,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 105
+                            }
+                        ],
+                        "raw_text": "Achieved 90% query accuracy with response times under 30 seconds for standard datasets, leveraging Amazon"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Bedrock (Nova) with LangChain and RAG for context-aware SQL generation",
+                                "line_number": 40,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 70
+                            }
+                        ],
+                        "raw_text": "Bedrock (Nova) with LangChain and RAG for context-aware SQL generation"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 41,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Designed a multi-data warehouse query engine supporting Databricks SQL and PostgreSQL through a unified",
+                                "line_number": 42,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 103
+                            }
+                        ],
+                        "raw_text": "Designed a multi-data warehouse query engine supporting Databricks SQL and PostgreSQL through a unified"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "abstraction layer, with S3 as a data lake backend",
+                                "line_number": 43,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 49
+                            }
+                        ],
+                        "raw_text": "abstraction layer, with S3 as a data lake backend"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 44,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Implemented session-aware memory using DynamoDB, enabling multi-turn analytical conversations where the",
+                                "line_number": 45,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 103
+                            }
+                        ],
+                        "raw_text": "Implemented session-aware memory using DynamoDB, enabling multi-turn analytical conversations where the"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "agent remembers context across queries",
+                                "line_number": 46,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 38
+                            }
+                        ],
+                        "raw_text": "agent remembers context across queries"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0006",
+                "text_content": "•\n\nResearched and applied RAG architecture and prompt engineering techniques to train the LLM on schema\nunderstanding and complex query generation, overcoming challenges in handling diverse user question patterns\n\n•\n\nDeployed a serverless production-ready architecture using AWS AppRunner (backend) and AWS Amplify\n\n(frontend), currently being demoed to prospective clients\n\nTech Stack: Python, SQL, LangChain, Amazon Bedrock (Nova), Databricks SQL, PostgreSQL, AWS S3, DynamoDB, RAG, AWS\n\nAppRunner, AWS Amplify",
+                "metadata": {
+                    "segment_id": "segment_0006",
+                    "reading_order": 6,
+                    "page_range": [
+                        1,
+                        1
+                    ],
+                    "block_range": [
+                        47,
+                        54
+                    ],
+                    "character_count": 512,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 47,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Researched and applied RAG architecture and prompt engineering techniques to train the LLM on schema",
+                                "line_number": 48,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 100
+                            },
+                            {
+                                "text": "understanding and complex query generation, overcoming challenges in handling diverse user question patterns",
+                                "line_number": 49,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 108
+                            }
+                        ],
+                        "raw_text": "Researched and applied RAG architecture and prompt engineering techniques to train the LLM on schema\nunderstanding and complex query generation, overcoming challenges in handling diverse user question patterns"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 50,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Deployed a serverless production-ready architecture using AWS AppRunner (backend) and AWS Amplify",
+                                "line_number": 51,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 97
+                            }
+                        ],
+                        "raw_text": "Deployed a serverless production-ready architecture using AWS AppRunner (backend) and AWS Amplify"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "(frontend), currently being demoed to prospective clients",
+                                "line_number": 52,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 57
+                            }
+                        ],
+                        "raw_text": "(frontend), currently being demoed to prospective clients"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Tech Stack: Python, SQL, LangChain, Amazon Bedrock (Nova), Databricks SQL, PostgreSQL, AWS S3, DynamoDB, RAG, AWS",
+                                "line_number": 53,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 113
+                            }
+                        ],
+                        "raw_text": "Tech Stack: Python, SQL, LangChain, Amazon Bedrock (Nova), Databricks SQL, PostgreSQL, AWS S3, DynamoDB, RAG, AWS"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "AppRunner, AWS Amplify",
+                                "line_number": 54,
+                                "page_number": 1,
+                                "indentation_spaces": 0,
+                                "character_count": 22
+                            }
+                        ],
+                        "raw_text": "AppRunner, AWS Amplify"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0007",
+                "text_content": "Data Migration Engineer – Oracle to BigQuery Modernization\n\n(Client/Internal Project)\n\n•\n\nWorked on migrating enterprise data workflows from Oracle to Google BigQuery, redesigning existing ETL\npipelines and adapting transformation logic for the GCP ecosystem.\n\n•\n\nSupported migration of 50–60 TB of historical and incremental data from on-prem/Oracle systems to Google\nCloud Platform (GCP).\n\n•\n\nDeveloped and modified workflows for loading, transforming, and validating large-scale datasets in BigQuery.",
+                "metadata": {
+                    "segment_id": "segment_0007",
+                    "reading_order": 7,
+                    "page_range": [
+                        2,
+                        2
+                    ],
+                    "block_range": [
+                        55,
+                        64
+                    ],
+                    "character_count": 503,
+                    "line_count": 10
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Data Migration Engineer – Oracle to BigQuery Modernization",
+                                "line_number": 55,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 58
+                            }
+                        ],
+                        "raw_text": "Data Migration Engineer – Oracle to BigQuery Modernization"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "(Client/Internal Project)",
+                                "line_number": 56,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 25
+                            }
+                        ],
+                        "raw_text": "(Client/Internal Project)"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 57,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Worked on migrating enterprise data workflows from Oracle to Google BigQuery, redesigning existing ETL",
+                                "line_number": 58,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 102
+                            },
+                            {
+                                "text": "pipelines and adapting transformation logic for the GCP ecosystem.",
+                                "line_number": 59,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 66
+                            }
+                        ],
+                        "raw_text": "Worked on migrating enterprise data workflows from Oracle to Google BigQuery, redesigning existing ETL\npipelines and adapting transformation logic for the GCP ecosystem."
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 60,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Supported migration of 50–60 TB of historical and incremental data from on-prem/Oracle systems to Google",
+                                "line_number": 61,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 104
+                            },
+                            {
+                                "text": "Cloud Platform (GCP).",
+                                "line_number": 62,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 21
+                            }
+                        ],
+                        "raw_text": "Supported migration of 50–60 TB of historical and incremental data from on-prem/Oracle systems to Google\nCloud Platform (GCP)."
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 63,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Developed and modified workflows for loading, transforming, and validating large-scale datasets in BigQuery.",
+                                "line_number": 64,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 108
+                            }
+                        ],
+                        "raw_text": "Developed and modified workflows for loading, transforming, and validating large-scale datasets in BigQuery."
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0008",
+                "text_content": "•\n\nUtilized GCP services including BigQuery, Cloud Run, Google Cloud Storage (GCS), IAM, and Cloud Logging to\nbuild scalable cloud-native data solutions.\n\n•\n\nImplemented optimized data ingestion and storage strategies to improve query performance and reduce\nprocessing overhead in BigQuery.\n\n•\n\nCollaborated with cross-functional teams to ensure schema compatibility, data validation, and successful\nmigration with minimal downtime.\n\n•\n\nAutomated deployment and monitoring processes using CI/CD and cloud-native tooling.\nTech Stack: BigQuery, GCP, Cloud Run, GCS, SQL, Python, Data Migration, ETL, Oracle, IAM, Cloud Logging",
+                "metadata": {
+                    "segment_id": "segment_0008",
+                    "reading_order": 8,
+                    "page_range": [
+                        2,
+                        2
+                    ],
+                    "block_range": [
+                        65,
+                        76
+                    ],
+                    "character_count": 624,
+                    "line_count": 12
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 65,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Utilized GCP services including BigQuery, Cloud Run, Google Cloud Storage (GCS), IAM, and Cloud Logging to",
+                                "line_number": 66,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 106
+                            },
+                            {
+                                "text": "build scalable cloud-native data solutions.",
+                                "line_number": 67,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 43
+                            }
+                        ],
+                        "raw_text": "Utilized GCP services including BigQuery, Cloud Run, Google Cloud Storage (GCS), IAM, and Cloud Logging to\nbuild scalable cloud-native data solutions."
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 68,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Implemented optimized data ingestion and storage strategies to improve query performance and reduce",
+                                "line_number": 69,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 99
+                            },
+                            {
+                                "text": "processing overhead in BigQuery.",
+                                "line_number": 70,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 32
+                            }
+                        ],
+                        "raw_text": "Implemented optimized data ingestion and storage strategies to improve query performance and reduce\nprocessing overhead in BigQuery."
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 71,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Collaborated with cross-functional teams to ensure schema compatibility, data validation, and successful",
+                                "line_number": 72,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 104
+                            },
+                            {
+                                "text": "migration with minimal downtime.",
+                                "line_number": 73,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 32
+                            }
+                        ],
+                        "raw_text": "Collaborated with cross-functional teams to ensure schema compatibility, data validation, and successful\nmigration with minimal downtime."
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 74,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Automated deployment and monitoring processes using CI/CD and cloud-native tooling.",
+                                "line_number": 75,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 83
+                            },
+                            {
+                                "text": "Tech Stack: BigQuery, GCP, Cloud Run, GCS, SQL, Python, Data Migration, ETL, Oracle, IAM, Cloud Logging",
+                                "line_number": 76,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 103
+                            }
+                        ],
+                        "raw_text": "Automated deployment and monitoring processes using CI/CD and cloud-native tooling.\nTech Stack: BigQuery, GCP, Cloud Run, GCS, SQL, Python, Data Migration, ETL, Oracle, IAM, Cloud Logging"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0009",
+                "text_content": "Harrys Inc. – Data Engineer (Manufacturing Analytics)\n\n•\n\nBuilt an end-to-end data pipeline to centralize and analyze razor manufacturing data, enabling data-driven insights\n\nfor production optimization, quality control, and operational decision-making\n\n•\n\nEngineered a medallion architecture (Raw → Silver → Gold) using Delta Lake, processing 2GB daily from 4 source\n\ntypes (CSV, ZIP, PDF) via PySpark on EMR Serverless\n\n•",
+                "metadata": {
+                    "segment_id": "segment_0009",
+                    "reading_order": 9,
+                    "page_range": [
+                        2,
+                        2
+                    ],
+                    "block_range": [
+                        77,
+                        84
+                    ],
+                    "character_count": 423,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Harrys Inc. – Data Engineer (Manufacturing Analytics)",
+                                "line_number": 77,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 53
+                            }
+                        ],
+                        "raw_text": "Harrys Inc. – Data Engineer (Manufacturing Analytics)"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 78,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Built an end-to-end data pipeline to centralize and analyze razor manufacturing data, enabling data-driven insights",
+                                "line_number": 79,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 115
+                            }
+                        ],
+                        "raw_text": "Built an end-to-end data pipeline to centralize and analyze razor manufacturing data, enabling data-driven insights"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "for production optimization, quality control, and operational decision-making",
+                                "line_number": 80,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 77
+                            }
+                        ],
+                        "raw_text": "for production optimization, quality control, and operational decision-making"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 81,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Engineered a medallion architecture (Raw → Silver → Gold) using Delta Lake, processing 2GB daily from 4 source",
+                                "line_number": 82,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 110
+                            }
+                        ],
+                        "raw_text": "Engineered a medallion architecture (Raw → Silver → Gold) using Delta Lake, processing 2GB daily from 4 source"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "types (CSV, ZIP, PDF) via PySpark on EMR Serverless",
+                                "line_number": 83,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 51
+                            }
+                        ],
+                        "raw_text": "types (CSV, ZIP, PDF) via PySpark on EMR Serverless"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 84,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0010",
+                "text_content": "Built 15 data assets (7 dimension tables, 8 fact tables, 5 stored procedures, 10 views) in Redshift, powering 4 Power\n\nBI dashboards for 3 business analysts\n\n•\n\nImplemented data validation rules to filter junk records and handle schema drift, automating 10-20 hours/week of\n\nmanual Excel-based analysis\n\n•\n\nOptimized processing by splitting monolithic tables into 2 specialized fact tables, reducing query complexity\n\nand improving join performance",
+                "metadata": {
+                    "segment_id": "segment_0010",
+                    "reading_order": 10,
+                    "page_range": [
+                        2,
+                        2
+                    ],
+                    "block_range": [
+                        85,
+                        92
+                    ],
+                    "character_count": 448,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Built 15 data assets (7 dimension tables, 8 fact tables, 5 stored procedures, 10 views) in Redshift, powering 4 Power",
+                                "line_number": 85,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 117
+                            }
+                        ],
+                        "raw_text": "Built 15 data assets (7 dimension tables, 8 fact tables, 5 stored procedures, 10 views) in Redshift, powering 4 Power"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "BI dashboards for 3 business analysts",
+                                "line_number": 86,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 37
+                            }
+                        ],
+                        "raw_text": "BI dashboards for 3 business analysts"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 87,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Implemented data validation rules to filter junk records and handle schema drift, automating 10-20 hours/week of",
+                                "line_number": 88,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 112
+                            }
+                        ],
+                        "raw_text": "Implemented data validation rules to filter junk records and handle schema drift, automating 10-20 hours/week of"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "manual Excel-based analysis",
+                                "line_number": 89,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 27
+                            }
+                        ],
+                        "raw_text": "manual Excel-based analysis"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 90,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Optimized processing by splitting monolithic tables into 2 specialized fact tables, reducing query complexity",
+                                "line_number": 91,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 109
+                            }
+                        ],
+                        "raw_text": "Optimized processing by splitting monolithic tables into 2 specialized fact tables, reducing query complexity"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "and improving join performance",
+                                "line_number": 92,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 30
+                            }
+                        ],
+                        "raw_text": "and improving join performance"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0011",
+                "text_content": "•\n\nReduced infrastructure costs using Delta Lake for S3 storage optimization and EMR Serverless for on-demand\n\nprocessing with GitHub Actions CI/CD\n\nTech Stack: PySpark, AWS EMR Serverless, S3, Delta Lake, Redshift, SQL, Power BI\n\nSynthetic Data Generator – Open Source Project\n\n•\n\nBuilt a zero-cost LLM-powered CLI tool to generate realistic synthetic CSV data from YAML schemas, solving\n\nthe challenge of lacking test data for pipeline development",
+                "metadata": {
+                    "segment_id": "segment_0011",
+                    "reading_order": 11,
+                    "page_range": [
+                        2,
+                        2
+                    ],
+                    "block_range": [
+                        93,
+                        100
+                    ],
+                    "character_count": 449,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 93,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Reduced infrastructure costs using Delta Lake for S3 storage optimization and EMR Serverless for on-demand",
+                                "line_number": 94,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 106
+                            }
+                        ],
+                        "raw_text": "Reduced infrastructure costs using Delta Lake for S3 storage optimization and EMR Serverless for on-demand"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "processing with GitHub Actions CI/CD",
+                                "line_number": 95,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 36
+                            }
+                        ],
+                        "raw_text": "processing with GitHub Actions CI/CD"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Tech Stack: PySpark, AWS EMR Serverless, S3, Delta Lake, Redshift, SQL, Power BI",
+                                "line_number": 96,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 80
+                            }
+                        ],
+                        "raw_text": "Tech Stack: PySpark, AWS EMR Serverless, S3, Delta Lake, Redshift, SQL, Power BI"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Synthetic Data Generator – Open Source Project",
+                                "line_number": 97,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 46
+                            }
+                        ],
+                        "raw_text": "Synthetic Data Generator – Open Source Project"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 98,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Built a zero-cost LLM-powered CLI tool to generate realistic synthetic CSV data from YAML schemas, solving",
+                                "line_number": 99,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 106
+                            }
+                        ],
+                        "raw_text": "Built a zero-cost LLM-powered CLI tool to generate realistic synthetic CSV data from YAML schemas, solving"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "the challenge of lacking test data for pipeline development",
+                                "line_number": 100,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 59
+                            }
+                        ],
+                        "raw_text": "the challenge of lacking test data for pipeline development"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0012",
+                "text_content": "•\n\nGenerates 10K records/minute using free open-source LLM APIs (Groq, Hugging Face) with validation\n\nsupport (unique, not null) and reference dataset integration\n\n•\n\nImplemented a pluggable adapter pattern for token-safe prompt generation and automated deployment via\n\nGitHub Actions\n\n•\n\nUsed in personal projects to generate mock datasets for testing data pipelines and demos, eliminating",
+                "metadata": {
+                    "segment_id": "segment_0012",
+                    "reading_order": 12,
+                    "page_range": [
+                        2,
+                        2
+                    ],
+                    "block_range": [
+                        101,
+                        108
+                    ],
+                    "character_count": 390,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 101,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Generates 10K records/minute using free open-source LLM APIs (Groq, Hugging Face) with validation",
+                                "line_number": 102,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 97
+                            }
+                        ],
+                        "raw_text": "Generates 10K records/minute using free open-source LLM APIs (Groq, Hugging Face) with validation"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "support (unique, not null) and reference dataset integration",
+                                "line_number": 103,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 60
+                            }
+                        ],
+                        "raw_text": "support (unique, not null) and reference dataset integration"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 104,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Implemented a pluggable adapter pattern for token-safe prompt generation and automated deployment via",
+                                "line_number": 105,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 101
+                            }
+                        ],
+                        "raw_text": "Implemented a pluggable adapter pattern for token-safe prompt generation and automated deployment via"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "GitHub Actions",
+                                "line_number": 106,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 14
+                            }
+                        ],
+                        "raw_text": "GitHub Actions"
+                    },
+                    {
+                        "block_type": "LIST",
+                        "lines": [
+                            {
+                                "text": "•",
+                                "line_number": 107,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 1
+                            }
+                        ],
+                        "raw_text": "•"
+                    },
+                    {
+                        "block_type": "TEXT",
+                        "lines": [
+                            {
+                                "text": "Used in personal projects to generate mock datasets for testing data pipelines and demos, eliminating",
+                                "line_number": 108,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 101
+                            }
+                        ],
+                        "raw_text": "Used in personal projects to generate mock datasets for testing data pipelines and demos, eliminating"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0013",
+                "text_content": "dependency on production data\n\nTech Stack: Python, LangChain, Groq, Hugging Face, GitHub Actions, PyPI\n\nCERTIFICATIONS\n\nAWS Certified Cloud Practitioner\n\nDatabricks Certified Data Engineer Associate\n\nGCP Associate Data Practitioner Certification\n\nAWS Certified Data Engineer Associate\n\nDatabricks Certified Generative AI Engineer Associate",
+                "metadata": {
+                    "segment_id": "segment_0013",
+                    "reading_order": 13,
+                    "page_range": [
+                        2,
+                        2
+                    ],
+                    "block_range": [
+                        109,
+                        116
+                    ],
+                    "character_count": 339,
+                    "line_count": 8
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "dependency on production data",
+                                "line_number": 109,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 29
+                            }
+                        ],
+                        "raw_text": "dependency on production data"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Tech Stack: Python, LangChain, Groq, Hugging Face, GitHub Actions, PyPI",
+                                "line_number": 110,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 71
+                            }
+                        ],
+                        "raw_text": "Tech Stack: Python, LangChain, Groq, Hugging Face, GitHub Actions, PyPI"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "CERTIFICATIONS",
+                                "line_number": 111,
+                                "page_number": 2,
+                                "indentation_spaces": 4,
+                                "character_count": 14
+                            }
+                        ],
+                        "raw_text": "CERTIFICATIONS"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "AWS Certified Cloud Practitioner",
+                                "line_number": 112,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 32
+                            }
+                        ],
+                        "raw_text": "AWS Certified Cloud Practitioner"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Databricks Certified Data Engineer Associate",
+                                "line_number": 113,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 44
+                            }
+                        ],
+                        "raw_text": "Databricks Certified Data Engineer Associate"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "GCP Associate Data Practitioner Certification",
+                                "line_number": 114,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 45
+                            }
+                        ],
+                        "raw_text": "GCP Associate Data Practitioner Certification"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "AWS Certified Data Engineer Associate",
+                                "line_number": 115,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 37
+                            }
+                        ],
+                        "raw_text": "AWS Certified Data Engineer Associate"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Databricks Certified Generative AI Engineer Associate",
+                                "line_number": 116,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 53
+                            }
+                        ],
+                        "raw_text": "Databricks Certified Generative AI Engineer Associate"
+                    }
+                ]
+            },
+            {
+                "segment_id": "segment_0014",
+                "text_content": "GCP Generative AI Leader Certification\n\nEDUCATION\n\nB.Tech – Electronics and Communication\n\nEngineering\n\nKalasalingam Academy of Research and Education – 8.67 CGPA",
+                "metadata": {
+                    "segment_id": "segment_0014",
+                    "reading_order": 14,
+                    "page_range": [
+                        2,
+                        2
+                    ],
+                    "block_range": [
+                        117,
+                        121
+                    ],
+                    "character_count": 162,
+                    "line_count": 5
+                },
+                "associated_blocks": [
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "GCP Generative AI Leader Certification",
+                                "line_number": 117,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 38
+                            }
+                        ],
+                        "raw_text": "GCP Generative AI Leader Certification"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "EDUCATION",
+                                "line_number": 118,
+                                "page_number": 2,
+                                "indentation_spaces": 5,
+                                "character_count": 9
+                            }
+                        ],
+                        "raw_text": "EDUCATION"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "B.Tech – Electronics and Communication",
+                                "line_number": 119,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 38
+                            }
+                        ],
+                        "raw_text": "B.Tech – Electronics and Communication"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Engineering",
+                                "line_number": 120,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 11
+                            }
+                        ],
+                        "raw_text": "Engineering"
+                    },
+                    {
+                        "block_type": "HEADING",
+                        "lines": [
+                            {
+                                "text": "Kalasalingam Academy of Research and Education – 8.67 CGPA",
+                                "line_number": 121,
+                                "page_number": 2,
+                                "indentation_spaces": 0,
+                                "character_count": 58
+                            }
+                        ],
+                        "raw_text": "Kalasalingam Academy of Research and Education – 8.67 CGPA"
+                    }
+                ]
+            }
+        ],
+        "total_segments": 14,
+        "total_characters": 5926
+    },
+    "metadata": {
+        "canonical_id": "doc_19701ecd00a6",
+        "source_filename": "resume.pdf",
+        "file_size_bytes": 193206,
+        "page_count": 2,
+        "parser_used": "PdfDocumentParser",
+        "encoding": "utf-8"
+    },
+    "statistics": {
+        "total_characters": 5854,
+        "total_lines": 121,
+        "total_paragraphs": 10,
+        "total_segments": 14,
+        "total_blocks": 108
+    }
+}

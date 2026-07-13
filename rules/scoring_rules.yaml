@@ -1,0 +1,9 @@
+metadata:
+  rule_id: scoring_rules
+  rule_version: "1.1"
+  effective_date: "2026-07-12"
+  status: ACTIVE
+  description: "Global scoring rules configuration"
+payload:
+  weights:
+    compatibility: 20

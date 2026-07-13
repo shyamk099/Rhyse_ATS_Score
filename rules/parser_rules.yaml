@@ -1,0 +1,44 @@
+metadata:
+  rule_id: parser_rules
+  rule_version: "1.0"
+  effective_date: "2026-07-12"
+  status: ACTIVE
+  description: "Global parser rules configuration"
+payload:
+  contact_extraction_rules:
+    phone_pattern: '(?:\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}'
+  skill_extraction_rules:
+    dictionary:
+      "SKL-01":
+        name: "Python"
+        aliases: ["py", "python3"]
+        category: "programming_language"
+      "SKL-02":
+        name: "Docker"
+        category: "devops"
+      "SKL-03":
+        name: "AWS Cloud"
+        category: "cloud"
+  experience_extraction_rules:
+    date_patterns:
+      - '\d{4}'
+  education_extraction_rules:
+    gpa_patterns:
+      - '\d\.\d+'
+  project_extraction_rules:
+    repository_domains:
+      - "github.com"
+      - "gitlab.com"
+  certification_extraction_rules:
+    credential_url_patterns:
+      - 'https://aws\.amazon\.com/verify/[A-Za-z0-9_-]+'
+  section_detection_rules:
+    section_aliases:
+      SKILLS:
+        - "skills"
+        - "technical skills"
+        - "technical ski lls"
+        - "technologies"
+  canonical_validation_rules:
+    required_collections: []
+    strict_cross_referencing: false

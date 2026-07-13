@@ -1,0 +1,50 @@
+{
+    "entities": [
+        {
+            "entity_type": "email",
+            "value": "shyamshs2002@gmail.com",
+            "confidence": 1.0,
+            "location": {
+                "segment_id": "segment_0001",
+                "start_char": 56,
+                "end_char": 78
+            },
+            "metadata": {
+                "raw_value": "shyamshs2002@gmail.com"
+            }
+        },
+        {
+            "entity_type": "linkedin",
+            "value": "linkedin.com/in/shyam-kota-9435881a2",
+            "confidence": 0.9,
+            "location": {
+                "segment_id": "segment_0001",
+                "start_char": 82,
+                "end_char": 118
+            },
+            "metadata": {
+                "raw_value": "linkedin.com/in/shyam-kota-9435881a2"
+            }
+        },
+        {
+            "entity_type": "portfolio",
+            "value": "b.tech",
+            "confidence": 0.8,
+            "location": {
+                "segment_id": "segment_0014",
+                "start_char": 51,
+                "end_char": 57
+            },
+            "metadata": {
+                "raw_value": "B.Tech"
+            }
+        }
+    ],
+    "statistics": {
+        "extractor_counts": {
+            "contact": 3
+        },
+        "total_entities": 3,
+        "execution_duration_seconds": 0.01
+    }
+}

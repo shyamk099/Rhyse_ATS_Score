@@ -1,0 +1,9 @@
+{
+    "status": "VALID",
+    "errors": [],
+    "warnings": [],
+    "duplicate_count": 0,
+    "reference_errors": 0,
+    "validation_timestamp": "2026-07-12T15:37:18Z",
+    "rules_version": "canonical_validation_rules:1.0"
+}
