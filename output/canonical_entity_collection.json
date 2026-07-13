@@ -54,7 +54,7 @@
         "statistics": {
             "total_skills_found": 0,
             "unique_skills_count": 0,
-            "execution_duration_seconds": 9.899988071992993e-06
+            "execution_duration_seconds": 1.0400020983070135e-05
         }
     },
     "experiences": {
@@ -62,7 +62,7 @@
         "statistics": {
             "total_experiences": 0,
             "current_employment_count": 0,
-            "execution_duration_seconds": 7.890001870691776e-05
+            "execution_duration_seconds": 0.00013920001219958067
         }
     },
     "education": {
@@ -71,7 +71,7 @@
             "total_education_records": 0,
             "records_with_degree": 0,
             "records_with_gpa": 0,
-            "execution_duration_seconds": 0.00039270002162083983
+            "execution_duration_seconds": 0.000631699978839606
         }
     },
     "projects": {
@@ -80,7 +80,7 @@
             "total_projects": 0,
             "projects_with_repo": 0,
             "projects_with_demo": 0,
-            "execution_duration_seconds": 1.3300013961270452e-05
+            "execution_duration_seconds": 1.71000137925148e-05
         }
     },
     "certifications": {
@@ -88,7 +88,7 @@
         "statistics": {
             "total_certifications": 0,
             "active_certifications": 0,
-            "execution_duration_seconds": 0.0012152999988757074
+            "execution_duration_seconds": 0.0011374999885447323
         }
     },
     "validation_summary": {
@@ -97,7 +97,7 @@
         "warnings": [],
         "duplicate_count": 0,
         "reference_errors": 0,
-        "validation_timestamp": "2026-07-12T15:37:18Z",
+        "validation_timestamp": "2026-07-13T16:02:56Z",
         "rules_version": "canonical_validation_rules:1.0"
     },
     "statistics": {
@@ -109,6 +109,6 @@
         "certification_count": 0,
         "duplicate_count": 0,
         "validation_error_count": 0,
-        "processing_duration_seconds": 0.0002403000253252685
+        "processing_duration_seconds": 0.00018390000332146883
     }
 }

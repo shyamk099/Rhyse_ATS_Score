@@ -1,27 +1,26 @@
-# Implementation Report — Book 03 Pipeline Validation Runner
+# Implementation Report — Book 04 Milestone 4.5 Project & Certification Feature Engineering
 
-## Validation Milestone Summary
+## Milestone Summary
 
 | Attribute | Value |
 |---|---|
-| **Objective** | E2E Pipeline Validation Runner |
+| **Current Phase** | Phase 4 (Book 04) |
+| **Milestone** | Milestone 4.5 Project & Certification Feature Engineering |
 | **Status** | Complete — Awaiting Approval |
-| **Test Count** | 129 (all passing) |
-| **New Tests** | 5 pipeline runner integration tests |
-| **New Files** | 2 scripts + 1 test + 3 documentation + 1 config |
+| **Test Suite Count** | 171 tests (all passing) |
+| **New Test Count** | 7 tests for project + 7 tests for certification |
+| **New Files** | 16 code modules + 2 test files + 13 design/UML files |
 | **Modified Files** | 0 frozen milestone files modified |
 
 ---
 
-## E2E Pipeline Overview
+## E2E Orchestration
 
 ```
-Input File (PDF/DOCX) -> Ingestion/Parsing -> Normalization -> Structural Layout Analysis
-                                                                    ↓
-Canonical Entity Collection <- Extraction Modules <- Section Boundaries <- Canonical Assembly
+CanonicalEntityCollection -> FeatureEngineeringService -> FeatureExtractorRegistry & Factory -> ProjectFeatureExtractor & CertificationFeatureExtractor -> FeatureCollection
 ```
 
-Every stage of this pipeline is executed sequentially without swallowing exceptions.
+This milestone implements the **ProjectFeatureExtractor** and **CertificationFeatureExtractor** mapping canonical project and certification entities to generic `Feature` objects inside `FeatureCollection` utilizing the `common/` shared helpers, using the strongly typed `PROJECT` and `CERTIFICATION` categories.
 
 ---
 
@@ -29,12 +28,13 @@ Every stage of this pipeline is executed sequentially without swallowing excepti
 
 | Check | Result |
 |---|---|
-| Unit Tests | ✅ 124/124 passed |
-| Integration Tests | ✅ 5/5 runner tests passed |
-| Pretty JSON Outputs | ✅ 10 JSON files generated under `output/` |
-| Execution Log | ✅ Fully hooked into LoggerFactory |
-| Frozen Milestones | ✅ No modifications to previous milestones |
-| CLI commands | ✅ `python scripts/run_pipeline.py samples/resume.pdf` succeeds |
+| Unit Tests | ✅ 171/171 passed |
+| Refinement 1 (No Math) | ✅ Verified zero complexity or rankings math, or validity expiration checks |
+| Refinement 2 (Generic Mapping) | ✅ Verified `Feature.value` stores a generic dictionary carrying raw values |
+| Refinement 3 (1:1 Mapping) | ✅ Verified exactly one Feature is emitted per entity, no merge/split |
+| Refinement 5 (Category Enums) | ✅ Verified category strongly typed enums |
+| Prefix Enforcement | ✅ Verified `PROJ-` check for Projects, `CERT-` check for Certifications |
+| Shared Utilities | ✅ Validator, normalizer, provenance, and url mapping shared under `common/` |
 
 ---
 
@@ -42,7 +42,7 @@ Every stage of this pipeline is executed sequentially without swallowing excepti
 
 ```
 Rhyse_ATS_Score/
-├── BOOK03_PIPELINE_VALIDATION.md                    ← NEW
+├── BOOK03_PIPELINE_VALIDATION.md
 ├── CANONICAL_ENTITY_COLLECTION_CLASS_DIAGRAM.md
 ├── CANONICAL_ENTITY_COLLECTION_COMPONENT_DIAGRAM.md
 ├── CANONICAL_ENTITY_COLLECTION_DEPENDENCY_GRAPH.md
@@ -55,6 +55,13 @@ Rhyse_ATS_Score/
 ├── CERTIFICATION_EXTRACTION_DESIGN.md
 ├── CERTIFICATION_EXTRACTION_PACKAGE_DIAGRAM.md
 ├── CERTIFICATION_EXTRACTION_SEQUENCE_DIAGRAM.md
+├── CERTIFICATION_FEATURE_ENGINEERING_CLASS_DIAGRAM.md      ← NEW
+├── CERTIFICATION_FEATURE_ENGINEERING_COMPONENT_DIAGRAM.md  ← NEW
+├── CERTIFICATION_FEATURE_ENGINEERING_DEPENDENCY_GRAPH.md   ← NEW
+├── CERTIFICATION_FEATURE_ENGINEERING_DESIGN.md             ← NEW
+├── CERTIFICATION_FEATURE_ENGINEERING_PACKAGE_DIAGRAM.md    ← NEW
+├── CERTIFICATION_FEATURE_ENGINEERING_SEQUENCE_DIAGRAM.md   ← NEW
+├── COMMON_FEATURE_UTILITIES_DESIGN.md                     ← NEW
 ├── CONTACT_EXTRACTION_CLASS_DIAGRAM.md
 ├── CONTACT_EXTRACTION_COMPONENT_DIAGRAM.md
 ├── CONTACT_EXTRACTION_DEPENDENCY_GRAPH.md
@@ -72,6 +79,12 @@ Rhyse_ATS_Score/
 ├── EDUCATION_EXTRACTION_DESIGN.md
 ├── EDUCATION_EXTRACTION_PACKAGE_DIAGRAM.md
 ├── EDUCATION_EXTRACTION_SEQUENCE_DIAGRAM.md
+├── EDUCATION_FEATURE_ENGINEERING_CLASS_DIAGRAM.md
+├── EDUCATION_FEATURE_ENGINEERING_COMPONENT_DIAGRAM.md
+├── EDUCATION_FEATURE_ENGINEERING_DEPENDENCY_GRAPH.md
+├── EDUCATION_FEATURE_ENGINEERING_DESIGN.md
+├── EDUCATION_FEATURE_ENGINEERING_PACKAGE_DIAGRAM.md
+├── EDUCATION_FEATURE_ENGINEERING_SEQUENCE_DIAGRAM.md
 ├── ENTITY_EXTRACTION_CLASS_DIAGRAM.md
 ├── ENTITY_EXTRACTION_COMPONENT_DIAGRAM.md
 ├── ENTITY_EXTRACTION_DEPENDENCY_GRAPH.md
@@ -84,15 +97,33 @@ Rhyse_ATS_Score/
 ├── EXPERIENCE_EXTRACTION_DESIGN.md
 ├── EXPERIENCE_EXTRACTION_PACKAGE_DIAGRAM.md
 ├── EXPERIENCE_EXTRACTION_SEQUENCE_DIAGRAM.md
-├── IMPLEMENTATION_REPORT.md                         ← UPDATED
-├── PIPELINE_EXECUTION_DIAGRAM.md                    ← NEW
-├── PIPELINE_RUNNER_DESIGN.md                        ← NEW
+├── EXPERIENCE_FEATURE_ENGINEERING_CLASS_DIAGRAM.md
+├── EXPERIENCE_FEATURE_ENGINEERING_COMPONENT_DIAGRAM.md
+├── EXPERIENCE_FEATURE_ENGINEERING_DEPENDENCY_GRAPH.md
+├── EXPERIENCE_FEATURE_ENGINEERING_DESIGN.md
+├── EXPERIENCE_FEATURE_ENGINEERING_PACKAGE_DIAGRAM.md
+├── EXPERIENCE_FEATURE_ENGINEERING_SEQUENCE_DIAGRAM.md
+├── FEATURE_ENGINEERING_FOUNDATION_CLASS_DIAGRAM.md
+├── FEATURE_ENGINEERING_FOUNDATION_COMPONENT_DIAGRAM.md
+├── FEATURE_ENGINEERING_FOUNDATION_DEPENDENCY_GRAPH.md
+├── FEATURE_ENGINEERING_FOUNDATION_DESIGN.md
+├── FEATURE_ENGINEERING_FOUNDATION_PACKAGE_DIAGRAM.md
+├── FEATURE_ENGINEERING_FOUNDATION_SEQUENCE_DIAGRAM.md
+├── IMPLEMENTATION_REPORT.md                             ← UPDATED
+├── PIPELINE_EXECUTION_DIAGRAM.md
+├── PIPELINE_RUNNER_DESIGN.md
 ├── PROJECT_EXTRACTION_CLASS_DIAGRAM.md
 ├── PROJECT_EXTRACTION_COMPONENT_DIAGRAM.md
 ├── PROJECT_EXTRACTION_DEPENDENCY_GRAPH.md
 ├── PROJECT_EXTRACTION_DESIGN.md
 ├── PROJECT_EXTRACTION_PACKAGE_DIAGRAM.md
 ├── PROJECT_EXTRACTION_SEQUENCE_DIAGRAM.md
+├── PROJECT_FEATURE_ENGINEERING_CLASS_DIAGRAM.md            ← NEW
+├── PROJECT_FEATURE_ENGINEERING_COMPONENT_DIAGRAM.md        ← NEW
+├── PROJECT_FEATURE_ENGINEERING_DEPENDENCY_GRAPH.md         ← NEW
+├── PROJECT_FEATURE_ENGINEERING_DESIGN.md                   ← NEW
+├── PROJECT_FEATURE_ENGINEERING_PACKAGE_DIAGRAM.md          ← NEW
+├── PROJECT_FEATURE_ENGINEERING_SEQUENCE_DIAGRAM.md         ← NEW
 ├── SECTION_DETECTION_CLASS_DIAGRAM.md
 ├── SECTION_DETECTION_COMPONENT_DIAGRAM.md
 ├── SECTION_DETECTION_DEPENDENCY_GRAPH.md
@@ -105,6 +136,12 @@ Rhyse_ATS_Score/
 ├── SKILL_EXTRACTION_DESIGN.md
 ├── SKILL_EXTRACTION_PACKAGE_DIAGRAM.md
 ├── SKILL_EXTRACTION_SEQUENCE_DIAGRAM.md
+├── SKILL_FEATURE_ENGINEERING_CLASS_DIAGRAM.md
+├── SKILL_FEATURE_ENGINEERING_COMPONENT_DIAGRAM.md
+├── SKILL_FEATURE_ENGINEERING_DEPENDENCY_GRAPH.md
+├── SKILL_FEATURE_ENGINEERING_DESIGN.md
+├── SKILL_FEATURE_ENGINEERING_PACKAGE_DIAGRAM.md
+├── SKILL_FEATURE_ENGINEERING_SEQUENCE_DIAGRAM.md
 ├── STRUCTURAL_ANALYSIS_CLASS_DIAGRAM.md
 ├── STRUCTURAL_ANALYSIS_COMPONENT_DIAGRAM.md
 ├── STRUCTURAL_ANALYSIS_DEPENDENCY_GRAPH.md
@@ -116,22 +153,22 @@ Rhyse_ATS_Score/
 ├── pyproject.toml
 ├── config/
 │   ├── development.yaml
-│   ├── logging.yaml                                 ← NEW
+│   ├── logging.yaml
 │   ├── production.yaml
 │   └── testing.yaml
-├── rules/                                           ← NEW
-│   ├── parser_rules.yaml                            ← NEW
-│   └── scoring_rules.yaml                           ← NEW
-├── samples/                                         ← NEW
-│   ├── corrupted.pdf                                ← NEW
-│   ├── empty.docx                                   ← NEW
-│   ├── empty.pdf                                    ← NEW
-│   ├── resume.docx                                  ← NEW
-│   ├── resume.pdf                                   ← NEW
-│   └── unsupported.txt                              ← NEW
-├── scripts/                                         ← NEW
-│   ├── generate_samples.py                          ← NEW
-│   └── run_pipeline.py                              ← NEW
+├── rules/
+│   ├── parser_rules.yaml
+│   └── scoring_rules.yaml
+├── samples/
+│   ├── corrupted.pdf
+│   ├── empty.docx
+│   ├── empty.pdf
+│   ├── resume.docx
+│   ├── resume.pdf
+│   └── unsupported.txt
+├── scripts/
+│   ├── generate_samples.py
+│   └── run_pipeline.py
 ├── src/
 │   └── ats_engine/
 │       ├── __init__.py
@@ -147,204 +184,5 @@ Rhyse_ATS_Score/
 │       │   ├── document_processing/
 │       │   │   ├── __init__.py
 │       │   │   ├── canonical_assembler.py
-│       │   │   ├── canonical_builder.py
-│       │   │   ├── canonical_models.py
-│       │   │   ├── canonical_rules.py
-│       │   │   ├── consistency_validator.py
-│       │   │   ├── docx_parser.py
-│       │   │   ├── exceptions.py
-│       │   │   ├── factory.py
-│       │   │   ├── integrity_validator.py
-│       │   │   ├── models.py
-│       │   │   ├── normalization.py
-│       │   │   ├── parser.py
-│       │   │   ├── pdf_parser.py
-│       │   │   ├── reading_order.py
-│       │   │   ├── registry.py
-│       │   │   ├── segment_builder.py
-│       │   │   ├── segment_validator.py
-│       │   │   ├── segmentation_models.py
-│       │   │   ├── segmentation_rules.py
-│       │   │   ├── segmenter.py
-│       │   │   ├── service.py
-│       │   │   ├── statistics_builder.py
-│       │   │   ├── structural_analyzer.py
-│       │   │   ├── structural_rules.py
-│       │   │   ├── structure_models.py
-│       │   │   └── validation_service.py
-│       │   ├── entity_extraction/
-│       │   │   ├── __init__.py
-│       │   │   ├── exceptions.py
-│       │   │   ├── extractor.py
-│       │   │   ├── factory.py
-│       │   │   ├── models.py
-│       │   │   ├── pipeline.py
-│       │   │   ├── registry.py
-│       │   │   ├── service.py
-│       │   │   ├── canonical/
-│       │   │   │   ├── __init__.py
-│       │   │   │   ├── canonical_models.py
-│       │   │   │   ├── canonical_rules.py
-│       │   │   │   ├── cross_reference_validator.py
-│       │   │   │   ├── duplicate_resolver.py
-│       │   │   │   ├── entity_validator.py
-│       │   │   │   ├── exceptions.py
-│       │   │   │   ├── pipeline.py
-│       │   │   │   └── service.py
-│       │   │   ├── certification/
-│       │   │   │   ├── __init__.py
-│       │   │   │   ├── certification_assembler.py
-│       │   │   │   ├── certification_candidate_builder.py
-│       │   │   │   ├── certification_candidate_validator.py
-│       │   │   │   ├── certification_entity_builder.py
-│       │   │   │   ├── certification_models.py
-│       │   │   │   ├── certification_normalizer.py
-│       │   │   │   ├── certification_rules.py
-│       │   │   │   ├── exceptions.py
-│       │   │   │   ├── pipeline.py
-│       │   │   │   └── service.py
-│       │   │   ├── contact/
-│       │   │   │   ├── __init__.py
-│       │   │   │   ├── candidate_validator.py
-│       │   │   │   ├── contact_candidate.py
-│       │   │   │   ├── contact_rules.py
-│       │   │   │   ├── entity_builder.py
-│       │   │   │   ├── exceptions.py
-│       │   │   │   ├── extractor.py
-│       │   │   │   ├── normalizer.py
-│       │   │   │   └── pattern_candidate_builder.py
-│       │   │   ├── education/
-│       │   │   │   ├── __init__.py
-│       │   │   │   ├── education_assembler.py
-│       │   │   │   ├── education_candidate_builder.py
-│       │   │   │   ├── education_candidate_validator.py
-│       │   │   │   ├── education_entity_builder.py
-│       │   │   │   ├── education_models.py
-│       │   │   │   ├── education_normalizer.py
-│       │   │   │   ├── education_rules.py
-│       │   │   │   ├── exceptions.py
-│       │   │   │   ├── pipeline.py
-│       │   │   │   └── service.py
-│       │   │   ├── experience/
-│       │   │   │   ├── __init__.py
-│       │   │   │   ├── exceptions.py
-│       │   │   │   ├── experience_assembler.py
-│       │   │   │   ├── experience_candidate_builder.py
-│       │   │   │   ├── experience_candidate_validator.py
-│       │   │   │   ├── experience_entity_builder.py
-│       │   │   │   ├── experience_models.py
-│       │   │   │   ├── experience_normalizer.py
-│       │   │   │   ├── experience_rules.py
-│       │   │   │   ├── pipeline.py
-│       │   │   │   └── service.py
-│       │   │   ├── project/
-│       │   │   │   ├── __init__.py
-│       │   │   │   ├── exceptions.py
-│       │   │   │   ├── pipeline.py
-│       │   │   │   ├── project_assembler.py
-│       │   │   │   ├── project_candidate_builder.py
-│       │   │   │   ├── project_candidate_validator.py
-│       │   │   │   ├── project_entity_builder.py
-│       │   │   │   ├── project_models.py
-│       │   │   │   ├── project_normalizer.py
-│       │   │   │   ├── project_rules.py
-│       │   │   │   └── service.py
-│       │   │   ├── section/
-│       │   │   │   ├── __init__.py
-│       │   │   │   ├── exceptions.py
-│       │   │   │   ├── heading_validator.py
-│       │   │   │   ├── pipeline.py
-│       │   │   │   ├── section_boundary_resolver.py
-│       │   │   │   ├── section_builder.py
-│       │   │   │   ├── section_candidate_builder.py
-│       │   │   │   ├── section_models.py
-│       │   │   │   ├── section_rules.py
-│       │   │   │   └── service.py
-│       │   │   └── skills/
-│       │   │       ├── __init__.py
-│       │   │       ├── duplicate_resolver.py
-│       │   │       ├── exceptions.py
-│       │   │       ├── matcher.py
-│       │   │       ├── pipeline.py
-│       │   │       ├── service.py
-│       │   │       ├── skill_candidate_builder.py
-│       │   │       ├── skill_candidate_validator.py
-│       │   │       ├── skill_entity_builder.py
-│       │   │       ├── skill_models.py
-│       │   │       ├── skill_normalizer.py
-│       │   │       └── skill_rules.py
-│       │   ├── evidence_intelligence/
-│       │   │   └── __init__.py
-│       │   ├── feature_engineering/
-│       │   │   └── __init__.py
-│       │   ├── knowledge_matching/
-│       │   │   └── __init__.py
-│       │   ├── recommendations/
-│       │   │   └── __init__.py
-│       │   └── rule_engine/
-│       │       ├── __init__.py
-│       │       ├── cache.py
-│       │       ├── exceptions.py
-│       │       ├── loader.py
-│       │       ├── models.py
-│       │       ├── provider.py
-│       │       ├── registry.py
-│       │       ├── service.py
-│       │       └── validator.py
-│       ├── infrastructure/
-│       │   ├── __init__.py
-│       │   ├── configuration/
-│       │   │   ├── __init__.py
-│       │   │   ├── cache.py
-│       │   │   ├── dotenv_loader.py
-│       │   │   ├── exceptions.py
-│       │   │   ├── models.py
-│       │   │   ├── resolver.py
-│       │   │   ├── service.py
-│       │   │   └── yaml_loader.py
-│       │   └── logging/
-│       │       ├── __init__.py
-│       │       ├── adapter.py
-│       │       ├── context.py
-│       │       ├── exceptions.py
-│       │       ├── factory.py
-│       │       ├── formatter.py
-│       │       ├── performance.py
-│       │       └── service.py
-│       ├── presentation/
-│       │   └── __init__.py
-│       ├── validation/
-│       │   └── __init__.py
-│       └── versioning/
-│           └── __init__.py
-└── tests/
-    ├── __init__.py
-    ├── architecture/
-    │   └── __init__.py
-    ├── integration/
-    │   ├── __init__.py
-    │   ├── test_infrastructure_integration.py
-    │   └── test_pipeline_runner.py                  ← NEW
-    └── unit/
-        ├── __init__.py
-        ├── domain/
-        │   ├── __init__.py
-        │   ├── test_canonical_collection.py
-        │   ├── test_canonical_validation.py
-        │   ├── test_certification_extraction.py
-        │   ├── test_contact_extraction.py
-        │   ├── test_document_processing.py
-        │   ├── test_document_segmentation.py
-        │   ├── test_education_extraction.py
-        │   ├── test_entity_extraction.py
-        │   ├── test_experience_extraction.py
-        │   ├── test_project_extraction.py
-        │   ├── test_rule_engine.py
-        │   ├── test_section_detection.py
-        │   ├── test_skill_extraction.py
-        │   └── test_structural_analysis.py
-        └── infrastructure/
-            ├── __init__.py
-            ├── test_configuration.py
-            └── test_logging.py
+------------- (TRUNCATED - FOR BREVITY)
 ```
