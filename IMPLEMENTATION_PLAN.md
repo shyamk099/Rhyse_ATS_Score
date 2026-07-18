@@ -1,83 +1,117 @@
-# ATS Resume Intelligence Engine - Handbook-Ordered Implementation Plan
+# Canonical Match Collection & Validation Implementation Plan
 
-## Implementation constraint
+## Goal Description
+Implement the final validation and consolidation layer for Book 05. This includes a service that builds an immutable `CanonicalMatchCollection` from the individual `MatchCollection`s (skill, experience, education, project, certification). The implementation must follow the strict architectural constraints, provide standardized telemetry, and expose a clean public API for downstream Books.
 
-This is a sequencing plan only. It does not authorize implementation or introduce business rules. “Classes” below means logical implementation boundaries required by the handbook; concrete names, language, and framework remain unselected.
+## User Review Required
+> [!IMPORTANT]
+> The new `CanonicalMatchCollection` is an immutable DTO that will become the sole input for Book 06 onward. Ensure that any existing code that may have been directly accessing individual `MatchCollection`s is updated to use the new service.
+>
+> The duplicate resolution policy must be chosen (e.g., `KEEP_FIRST`). Confirm the default you prefer.
 
-## Phase 1 - Approved foundation sequence
+## Open Questions
+> [!WARNING] Confirm the desired default duplicate resolution strategy (KEEP_FIRST, KEEP_LAST, KEEP_HIGHEST_CONFIDENCE, KEEP_ALL).
+> 
+> > Should the `CrossMatchValidator` enforce strict matcher category consistency (e.g., skill matches only contain matcher_type `SkillMatcher`)?
+> 
+> > What version identifier should be used for the `CanonicalMatchingRules` (e.g., `canonical_rules_v1.0`)?
 
-Phase 1 is an implementation-sequencing prerequisite. It establishes no parser, entity, feature, matching, evidence, scoring, or recommendation business rules. Book 09 remains the implementation authority for rule behavior; only the technical foundation for loading and serving future approved rules is created here.
+## Proposed Changes
+---
+### matching/canonical
+#### [NEW] [__init__.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/__init__.py)
+Exports the public classes.
 
-### Milestone 1.1 - Project Structure
+#### [NEW] [rules.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/rules.py)
+Immutable Pydantic model defining configuration flags:
+- `enabled: bool = True`
+- `deterministic_ordering: bool = True`
+- `duplicate_policy: Literal["KEEP_FIRST", "KEEP_LAST", "KEEP_HIGHEST_CONFIDENCE", "KEEP_ALL"] = "KEEP_FIRST"`
+- `validation_mode: Literal["STRICT", "LENIENT"] = "STRICT"`
+- `rules_version: str = "canonical_rules_v1.0"`
 
-**Purpose:** establish the approved Clean Architecture module boundaries and dependency direction. **Files:** project/package layout only. **Classes/interfaces:** composition-root boundary and package markers only. **Dependencies:** none. **Acceptance criteria:** business-domain modules have no infrastructure dependency. **Testing scope:** import/dependency-direction checks. **Deliverables:** approved empty project structure.
+#### [NEW] [validator.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/validator.py)
+Stateless `MatchValidator` that inspects each `MatchResult` for structural compliance (required fields, provenance, matcher_type consistency). Returns a list of `ValidationErrorDetail`.
 
-### Milestone 1.2 - Configuration
+#### [NEW] [duplicate_resolver.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/duplicate_resolver.py)
+Resolves duplicate `MatchResult`s according to the configured `duplicate_policy`. Implements `keep_first`, `keep_last`, `keep_highest_confidence` (assumes a `confidence` attribute may be present), and `keep_all`.
 
-**Purpose:** establish infrastructure configuration loading distinct from frozen business rules. **Files:** configuration boundary only. **Classes/interfaces:** configuration provider and typed infrastructure-settings contract. **Dependencies:** M1.1. **Acceptance criteria:** no business-rule values are hardcoded or introduced. **Testing scope:** valid/invalid infrastructure configuration loading. **Deliverables:** configuration boundary.
+#### [NEW] [cross_validator.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/cross_validator.py)
+Validates cross‑collection invariants:
+- No duplicate match IDs across collections.
+- No duplicate resume feature IDs or job feature IDs across collections.
+- All matcher_type values belong to the allowed set.
+- Provenance fields are present.
+Generates `ValidationWarningDetail` for non‑critical issues.
 
-### Milestone 1.3 - Logging
+#### [NEW] [stats_builder.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/stats_builder.py)
+Builds a `MatchStatistics` mapping using the standardized 8‑field schema (total matches, per‑category counts, duplicate counts, warning counts, validation_error_counts, execution_duration_ms, etc.).
 
-**Purpose:** establish safe, structured observability for future stages. **Files:** logging boundary only. **Classes/interfaces:** logger provider and correlation-context contract. **Dependencies:** M1.1-M1.2. **Acceptance criteria:** logging contains no sensitive document payloads and does not influence business outcomes. **Testing scope:** redaction and correlation tests. **Deliverables:** logging boundary.
+#### [NEW] [validation_summary_builder.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/validation_summary_builder.py)
+Aggregates `ValidationErrorDetail` and `ValidationWarningDetail` into a `ValidationSummary` model.
 
-### Milestone 1.4 - Rule Engine Foundation
+#### [NEW] [builder.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/builder.py)
+Creates the immutable `CanonicalMatchCollection` DTO from sorted `MatchResult`s, statistics, and validation summary.
 
-**Purpose:** establish Rule Loader, Rule Validator, Rule Registry, Runtime Rule Provider, Rule Models, Rule Cache, and dependency-injection wiring without implementing any business-rule content. **Files:** `09_ATS_Rule_Engine/*` as architecture reference; rule-engine foundation package. **Classes/interfaces:** Rule Loader, Rule Validator, Rule Registry, Runtime Rule Provider, Rule Models, Rule Cache, DI wiring. **Dependencies:** M1.1-M1.3 and authoritative Rule JSON schema. **Acceptance criteria:** only structurally valid, immutable rule documents can be loaded, registered, cached, and provided at runtime; no parser/entity/feature/matching/evidence/scoring/recommendation rule semantics are implemented. **Testing scope:** structural validation, registry/cache behavior, immutability, dependency injection. **Deliverables:** Rule Engine technical foundation.
+#### [NEW] [pipeline.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/pipeline.py)
+Orchestrates the flow: validator → duplicate resolver → cross validator → stats builder → summary builder → collection builder. Returns the final collection.
 
-### Milestone 01 - System Architecture
+#### [NEW] [service.py](file:///c:/Users/shyam/OneDrive/Desktop/Rhyse/Rhyse_ATS_Score/src/ats_engine/domain/matching/canonical/service.py)
+Public API class `CanonicalMatchCollectionService` with the `build` method described in the spec. Delegates to `CanonicalMatchCollectionPipeline`.
 
-**Purpose:** compose the five layers and adjacent-layer-only dependency direction.
+---
+### matching/models.py (modify)
+Add immutable DTOs:
+- `ValidationErrorDetail`
+- `ValidationWarningDetail`
+- `ValidationSummary`
+- `MatchStatistics`
+- `CanonicalMatchCollection`
+All with `Config` set to `frozen = True, extra = "forbid"`.
+Update imports where necessary.
 
-**Files:** `01_System_Architecture/*`; composition root, cross-cutting validation/error/observability interfaces. **Classes/interfaces:** engine ports, output port, rule provider, dependency-composition boundary. **Dependencies:** Phase 1. **Acceptance criteria:** all engine ownership and data flows match Book 01. **Testing scope:** dependency/contract integration tests. **Deliverables:** approved component and sequence diagrams.
+### matching/exceptions.py (modify)
+Append new typed exceptions:
+- `MatchValidationError`
+- `DuplicateMatchError`
+- `CrossMatchValidationError`
+- `CanonicalMatchCollectionBuildError`
+All inherit from `Exception` and carry a message and optional payload.
 
-### Milestone 02 - Document Processing
+---
+### tests/unit/domain/test_canonical_match_collection.py (new)
+Create comprehensive unit tests covering:
+- Validation of a well‑formed collection (no errors).
+- Detection of structural validation errors.
+- Duplicate resolution according to each policy.
+- Cross‑collection duplicate detection.
+- Deterministic ordering of final collection.
+- Immutability of the DTOs (attempting to modify raises `TypeError`).
+- End‑to‑end pipeline integration.
 
-**Purpose:** validate, extract, parse, and validate Resume/JD documents into canonical JSON with confidence.
+---
+### documentation (new artifacts)
+Create markdown design artifacts in the artifacts directory:
+- `CANONICAL_MATCH_COLLECTION_DESIGN.md`
+- `CANONICAL_MATCH_COLLECTION_CLASS_DIAGRAM.md`
+- `CANONICAL_MATCH_COLLECTION_SEQUENCE_DIAGRAM.md`
+- `CANONICAL_MATCH_COLLECTION_COMPONENT_DIAGRAM.md`
+- `CANONICAL_MATCH_COLLECTION_PACKAGE_DIAGRAM.md`
+- `CANONICAL_MATCH_COLLECTION_DEPENDENCY_GRAPH.md`
+- `BOOK05_COMPLETENESS_REPORT.md`
+Update `IMPLEMENTATION_REPORT.md` to reference the new component.
 
-**Files:** `02_Document_Processing/*`; document-processing package and canonical Resume/JD contracts. **Classes/interfaces:** upload validator, type detector, OCR detector/processor, text extractor, Resume parser, JD parser, schema validator. **Dependencies:** M01; Rule Engine Foundation; approved parser-rule content; authoritative supported-format/OCR decisions. **Acceptance criteria:** required Resume/JD fields, source text, validation, and parser confidence conform to the canonical schema. **Testing scope:** supported/invalid formats, OCR/no-OCR, extraction order, malformed content, schema validation. **Deliverables:** immutable Resume JSON and JD JSON.
+## Verification Plan
+1. **Static lint** – run `ruff`/`flake8` to ensure code style.
+2. **Unit tests** – execute the command from the spec:
+   ```powershell
+   $env:PYTHONPATH="src"; python -m unittest discover -s tests -p "test_canonical_match_collection.py"
+   ```
+3. **Full suite** – run all tests to confirm no regressions.
+4. **Manual inspection** – open the generated `CanonicalMatchCollection` in a REPL and verify ordering and immutability.
+5. **Logging** – ensure the logger emits the consolidated statistics block with the expected keys.
 
-### Milestone 03 - Entity Extraction
+**All processors remain stateless**, no global mutable state, and all DTOs are pure data containers.
 
-**Purpose:** extract source-traceable entities, normalize without losing original values, form relationships, and calculate confidence.
-
-**Files:** `03_Entity_Extraction/*`; entity-extraction package and Entity JSON contract. **Classes/interfaces:** Resume/JD extractor, normalizer, relationship builder, entity-confidence calculator. **Dependencies:** M02; Rule Engine Foundation; approved entity-rule content; alias/ontology assets. **Acceptance criteria:** entity provenance, canonical/original values, relationships, and confidence satisfy the Entity JSON specification. **Testing scope:** each supported entity type, normalization preservation, relationship validation, confidence boundaries. **Deliverables:** immutable Entity JSON.
-
-### Milestone 04 - Feature Engineering
-
-**Purpose:** calculate primitive and derived Resume/JD features without matching or scoring.
-
-**Files:** `04_Feature_Engineering/*`; feature-engineering package and Feature JSON contract. **Classes/interfaces:** Resume/JD feature calculator, derived-feature calculator, confidence calculator, feature validator. **Dependencies:** M03; Rule Engine Foundation; approved feature-rule content. **Acceptance criteria:** all feature values retain entity traceability and no feature module performs matching/scoring. **Testing scope:** calculations, dependency rules, confidence, missing source entities. **Deliverables:** immutable Resume and JD Feature JSON.
-
-### Milestone 05 - Hybrid Knowledge Layer
-
-**Purpose:** compare feature pairs using the approved fixed matching order and emit immutable Match JSON.
-
-**Files:** `05_Hybrid_Knowledge_Layer/*`; knowledge-matching package, alias dictionary/ontology/model adapters. **Classes/interfaces:** matching orchestrator; exact, alias, fuzzy, ontology, semantic strategies; match-confidence calculator; Match JSON validator. **Dependencies:** M04; Rule Engine Foundation; approved matching-rule content; alias dictionary, ontology, embedding adapter/version. **Acceptance criteria:** only one strategy is recorded per match; match reasons, confidence, relevant versions, and provenance are complete. **Testing scope:** strategy precedence, threshold edges, non-matches, ontology traversal, semantic adapter determinism. **Deliverables:** immutable Match JSON.
-
-### Milestone 06 - Evidence Intelligence
-
-**Purpose:** generate evidence once, validate it, calculate requirement/section coverage and confidence, aggregate and explain it.
-
-**Files:** `06_Evidence_Intelligence/*`; evidence-intelligence package and Evidence JSON contract. **Classes/interfaces:** evidence generator, requirement/section evidence builders, validator, confidence calculator, aggregator, explanation builder. **Dependencies:** M05; Rule Engine Foundation; approved evidence-rule content. **Acceptance criteria:** each evaluation has one Evidence JSON; requirements, sections, references, coverage, confidence, and explanations validate; downstream consumers do not mutate it. **Testing scope:** evidence generation, missing/broken references, coverage/calculation boundaries, explanation traceability. **Deliverables:** immutable Evidence JSON.
-
-### Milestone 07 - ATS Scoring
-
-**Purpose:** independently calculate components, apply immutable weights and integrity penalty once, calibrate and publish Score JSON.
-
-**Files:** `07_ATS_Scoring/*`; ATS-scoring package and Score JSON contract. **Classes/interfaces:** compatibility, quality, JD-match, semantic-validation, integrity calculators; weighted scorer; calibrator; version manager; score publisher/validator. **Dependencies:** M06; Rule Engine Foundation; approved scoring-rule content; calibration data/specification. **Acceptance criteria:** only scoring calculates score; evidence is not changed; positive weights total 100%; penalty is unweighted/once; final score is bounded; confidence never alters score. **Testing scope:** formula, weights, penalty cap/boundaries, calibration, version reproducibility, score schema. **Deliverables:** immutable Score JSON and published evaluation.
-
-### Milestone 08 - ATS Recommendation Engine
-
-**Purpose:** transform evidence and scores into truthful, validated, prioritized recommendations without rewriting a resume.
-
-**Files:** `08_ATS_Recommendation_Engine/*`; recommendation package, Recommendation JSON, API adapter. **Classes/interfaces:** gap analyzer, recommendation generator, impact estimator, prioritizer, validator, report repository, API controller/response mapper. **Dependencies:** M06-M07; Rule Engine Foundation; approved recommendation-rule content; persistent report store; auth/rate-limit infrastructure. **Acceptance criteria:** every recommendation is evidence-backed, deterministic, independently validated, prioritized, versioned, and never claims a score change as fact. **Testing scope:** gaps, prioritization, impact ranges/confidence, ethics/reference validation, documented endpoints/status/error contracts. **Deliverables:** Recommendation JSON and `/api/v1` contract implementation.
-
-### Milestone 09 - ATS Rule Engine
-
-**Purpose:** complete Book 09 rule behavior incrementally after each consuming handbook phase is approved, without changing the Phase 1 foundation.
-
-**Files:** `09_ATS_Rule_Engine/*`; external approved rule configuration assets. **Classes/interfaces:** category-specific rule validators/providers that extend the Phase 1 foundation. **Dependencies:** Rule Engine Foundation; approved rule content; corresponding consuming contracts. **Acceptance criteria:** each activated rule category is validated, versioned, immutable, and traceable; runtime engines never modify active rules. **Testing scope:** category rule validation, version compatibility, activation/audit, and consumer integration. **Deliverables:** approved, activated rule categories aligned with Books 02-08.
-
-## OPEN QUESTIONS
-
-Implementation must stop before Milestone 02 until the open questions in `ARCHITECTURE.md` are resolved, particularly missing rule/configuration assets, matching-order conflict, and undefined score/calibration/penalty semantics.
+---
+**Implementation will proceed only after your approval.**

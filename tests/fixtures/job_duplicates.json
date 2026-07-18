@@ -1,0 +1,194 @@
+{
+    "skills": {
+        "features": [
+            {
+                "feature_id": "FEAT-SK-1",
+                "name": "Python",
+                "category": "SKILL",
+                "value": "Python",
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "SKL-01",
+                    "source_entity_type": "SKILL",
+                    "source_section": "UNKNOWN",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            },
+            {
+                "feature_id": "FEAT-SK-1-dup2",
+                "name": "Python",
+                "category": "SKILL",
+                "value": "Python",
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "SKL-01",
+                    "source_entity_type": "SKILL",
+                    "source_section": "UNKNOWN",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            }
+        ],
+        "statistics": {
+            "total_features_extracted": 2,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "experience": {
+        "features": [
+            {
+                "feature_id": "FEAT-EX-1",
+                "name": "Developer",
+                "category": "EXPERIENCE",
+                "value": {
+                    "company": "Google",
+                    "job_title": "Developer",
+                    "duration_months": 60,
+                    "experience_id": "EXP-01"
+                },
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "EXP-01",
+                    "source_entity_type": "EXPERIENCE",
+                    "source_section": "EXPERIENCE",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            }
+        ],
+        "statistics": {
+            "total_features_extracted": 1,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "education": {
+        "features": [],
+        "statistics": {
+            "total_features_extracted": 0,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "projects": {
+        "features": [],
+        "statistics": {
+            "total_features_extracted": 0,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "certifications": {
+        "features": [],
+        "statistics": {
+            "total_features_extracted": 0,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "statistics": {
+        "total_feature_count": 3,
+        "duplicate_count": 0,
+        "validation_error_count": 0,
+        "warning_count": 0,
+        "category_counts": {
+            "SKILL": 2,
+            "EXPERIENCE": 1,
+            "EDUCATION": 0,
+            "PROJECT": 0,
+            "CERTIFICATION": 0
+        }
+    },
+    "validation_summary": {
+        "status": "VALID",
+        "errors": [],
+        "warnings": [],
+        "duplicate_count": 0,
+        "validation_timestamp": "2026-07-13T20:00:00Z",
+        "rules_version": "v1.0"
+    },
+    "metadata": {}
+}

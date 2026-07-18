@@ -1,0 +1,94 @@
+{
+    "skills": {
+        "features": [],
+        "statistics": {
+            "total_features_extracted": 0,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "experience": {
+        "features": [],
+        "statistics": {
+            "total_features_extracted": 0,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "education": {
+        "features": [],
+        "statistics": {
+            "total_features_extracted": 0,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "projects": {
+        "features": [],
+        "statistics": {
+            "total_features_extracted": 0,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "certifications": {
+        "features": [],
+        "statistics": {
+            "total_features_extracted": 0,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "statistics": {
+        "total_feature_count": 0,
+        "duplicate_count": 0,
+        "validation_error_count": 0,
+        "warning_count": 0,
+        "category_counts": {
+            "SKILL": 0,
+            "EXPERIENCE": 0,
+            "EDUCATION": 0,
+            "PROJECT": 0,
+            "CERTIFICATION": 0
+        }
+    },
+    "validation_summary": {
+        "status": "VALID",
+        "errors": [],
+        "warnings": [],
+        "duplicate_count": 0,
+        "validation_timestamp": "2026-07-13T20:00:00Z",
+        "rules_version": "v1.0"
+    },
+    "metadata": {}
+}

@@ -1,0 +1,334 @@
+{
+    "skills": {
+        "features": [
+            {
+                "feature_id": "FEAT-SK-1",
+                "name": "Python",
+                "category": "SKILL",
+                "value": "Python",
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "SKL-01",
+                    "source_entity_type": "SKILL",
+                    "source_section": "UNKNOWN",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            },
+            {
+                "feature_id": "FEAT-SK-2",
+                "name": "SQL",
+                "category": "SKILL",
+                "value": "SQL",
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "SKL-02",
+                    "source_entity_type": "SKILL",
+                    "source_section": "UNKNOWN",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            },
+            {
+                "feature_id": "FEAT-SK-3",
+                "name": "C++",
+                "category": "SKILL",
+                "value": "C++",
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "SKL-04",
+                    "source_entity_type": "SKILL",
+                    "source_section": "UNKNOWN",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            }
+        ],
+        "statistics": {
+            "total_features_extracted": 3,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "experience": {
+        "features": [
+            {
+                "feature_id": "FEAT-EX-1",
+                "name": "Lead Engineer",
+                "category": "EXPERIENCE",
+                "value": {
+                    "company": "Meta",
+                    "job_title": "Lead Engineer",
+                    "duration_months": 48,
+                    "experience_id": "EXP-02"
+                },
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "EXP-02",
+                    "source_entity_type": "EXPERIENCE",
+                    "source_section": "EXPERIENCE",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            }
+        ],
+        "statistics": {
+            "total_features_extracted": 1,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "education": {
+        "features": [
+            {
+                "feature_id": "FEAT-ED-1",
+                "name": "M.S.",
+                "category": "EDUCATION",
+                "value": {
+                    "institution": "MIT",
+                    "degree": "M.S.",
+                    "major": "EECS",
+                    "education_id": "EDU-02"
+                },
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "EDU-02",
+                    "source_entity_type": "EDUCATION",
+                    "source_section": "UNKNOWN",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            }
+        ],
+        "statistics": {
+            "total_features_extracted": 1,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "projects": {
+        "features": [
+            {
+                "feature_id": "FEAT-PR-1",
+                "name": "Distributed Key-Value Store",
+                "category": "PROJECT",
+                "value": {
+                    "project_name": "Distributed Key-Value Store",
+                    "role": "Architect",
+                    "project_id": "PRJ-02"
+                },
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "PRJ-02",
+                    "source_entity_type": "PROJECT",
+                    "source_section": "UNKNOWN",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            }
+        ],
+        "statistics": {
+            "total_features_extracted": 1,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "certifications": {
+        "features": [
+            {
+                "feature_id": "FEAT-CR-1",
+                "name": "CKA",
+                "category": "CERTIFICATION",
+                "value": {
+                    "certification_name": "CKA",
+                    "issuing_organization": "CNCF",
+                    "certification_id": "CRT-02"
+                },
+                "confidence": 1.0,
+                "locations": [
+                    {
+                        "page_number": 1,
+                        "block_index": 0,
+                        "line_index": 0,
+                        "start_character": 0,
+                        "end_character": 10
+                    }
+                ],
+                "provenance": {
+                    "source_entity_id": "CRT-02",
+                    "source_entity_type": "CERTIFICATION",
+                    "source_section": "UNKNOWN",
+                    "source_document": "document.pdf",
+                    "matched_rules": [
+                        "rule_1"
+                    ]
+                },
+                "metadata": {
+                    "creation_timestamp": "2026-07-13T20:00:00Z",
+                    "extractor_name": "TestExtractor",
+                    "version": "1.0",
+                    "custom_attributes": {}
+                }
+            }
+        ],
+        "statistics": {
+            "total_features_extracted": 1,
+            "extractor_counts": {},
+            "execution_duration_seconds": 0.1
+        },
+        "context": {
+            "correlation_id": "test-correlation-id",
+            "rule_engine_config": {},
+            "environment": "testing",
+            "metadata": {}
+        }
+    },
+    "statistics": {
+        "total_feature_count": 7,
+        "duplicate_count": 0,
+        "validation_error_count": 0,
+        "warning_count": 0,
+        "category_counts": {
+            "SKILL": 3,
+            "EXPERIENCE": 1,
+            "EDUCATION": 1,
+            "PROJECT": 1,
+            "CERTIFICATION": 1
+        }
+    },
+    "validation_summary": {
+        "status": "VALID",
+        "errors": [],
+        "warnings": [],
+        "duplicate_count": 0,
+        "validation_timestamp": "2026-07-13T20:00:00Z",
+        "rules_version": "v1.0"
+    },
+    "metadata": {}
+}
