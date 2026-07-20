@@ -54,7 +54,7 @@
         "statistics": {
             "total_skills_found": 0,
             "unique_skills_count": 0,
-            "execution_duration_seconds": 8.399947546422482e-06
+            "execution_duration_seconds": 1.0199961252510548e-05
         }
     },
     "experiences": {
@@ -62,7 +62,7 @@
         "statistics": {
             "total_experiences": 0,
             "current_employment_count": 0,
-            "execution_duration_seconds": 8.300004992634058e-05
+            "execution_duration_seconds": 7.800001185387373e-05
         }
     },
     "education": {
@@ -71,7 +71,7 @@
             "total_education_records": 0,
             "records_with_degree": 0,
             "records_with_gpa": 0,
-            "execution_duration_seconds": 0.0004488000413402915
+            "execution_duration_seconds": 0.0003496999852359295
         }
     },
     "projects": {
@@ -80,7 +80,7 @@
             "total_projects": 0,
             "projects_with_repo": 0,
             "projects_with_demo": 0,
-            "execution_duration_seconds": 1.4299992471933365e-05
+            "execution_duration_seconds": 1.2699980288743973e-05
         }
     },
     "certifications": {
@@ -88,7 +88,7 @@
         "statistics": {
             "total_certifications": 0,
             "active_certifications": 0,
-            "execution_duration_seconds": 0.0017711000982671976
+            "execution_duration_seconds": 0.000988700077868998
         }
     },
     "validation_summary": {
@@ -97,7 +97,7 @@
         "warnings": [],
         "duplicate_count": 0,
         "reference_errors": 0,
-        "validation_timestamp": "2026-07-20T16:02:27Z",
+        "validation_timestamp": "2026-07-20T19:21:58Z",
         "rules_version": "canonical_validation_rules:1.0"
     },
     "statistics": {
@@ -109,6 +109,6 @@
         "certification_count": 0,
         "duplicate_count": 0,
         "validation_error_count": 0,
-        "processing_duration_seconds": 0.0002183000324293971
+        "processing_duration_seconds": 0.00016389996744692326
     }
 }
